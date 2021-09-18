@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class bottomNavBar extends StatelessWidget {
   const bottomNavBar({ Key? key }) : super(key: key);
@@ -23,24 +24,19 @@ class bottomNavBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         elevation: 0,
         unselectedItemColor: Colors.black,
-        selectedIconTheme: IconThemeData(color: Colors.white),
-        selectedLabelStyle: TextStyle(color: Colors.white),
+        selectedItemColor: Colors.white,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: FaIcon(FontAwesomeIcons.landmark),
+            label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.access_alarms),
+            label: 'Reminders',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            icon: FaIcon(FontAwesomeIcons.bars),
+            label: 'More',
           ),
         ],
       ),
