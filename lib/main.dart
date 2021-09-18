@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/test.dart';
 
@@ -38,7 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(appBarTitle: 'Dashboard'),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
