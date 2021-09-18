@@ -6,8 +6,13 @@ class Test1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Text("1"),
+      child: GridView.count(
+        crossAxisCount: 2,
+        children: List.generate(4, (index) {
+          return Center(
+            child: Text('$index'),
+          );
+        }),
       ),
     );
   }
@@ -20,7 +25,7 @@ class Test2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("2"),
+        child: Text("Reminder"),
       ),
     );
   }
@@ -33,7 +38,7 @@ class Test3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text("3"),
+        child: Text("More"),
       ),
     );
   }
