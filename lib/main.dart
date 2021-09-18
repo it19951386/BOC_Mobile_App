@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
-import 'package:boc_mobile_app/screens/pasindu/customBottomNavigationBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/test.dart';
 
@@ -40,7 +39,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(appBarTitle: 'Dashboard'),
-      body: _children[_currentIndex],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: _children[_currentIndex],
+      ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
