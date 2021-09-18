@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
+import 'package:boc_mobile_app/screens/pasindu/customBottomNavigationBar.dart';
 void main() {
   runApp(MyApp());
 }
@@ -37,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Text("Hello World"),
       ),
+      bottomNavigationBar:bottomNavBar(),
     );
   }
 }
