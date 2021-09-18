@@ -37,14 +37,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
-            fit: BoxFit.cover,
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+            // decoration: new BoxDecoration(
+            //   image: new DecorationImage(
+            //     image: new AssetImage("assets/background.png"),
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
+            child: new Center(
+              child: _children[_currentIndex],
+            ),
           ),
-        ),
-        child: _children[_currentIndex],
+        ],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
