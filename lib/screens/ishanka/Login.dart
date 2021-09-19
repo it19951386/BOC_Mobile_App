@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'widgets/widgets.dart';
+
+void main() => runApp(MaterialApp(
+  home: Login(),
+  debugShowCheckedModeBanner: false,
+));
+
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        BackgroundImage(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Column(
+            children: [
+              Container(
+                height: 250,
+                child: Center(
+                  child: Image(
+                      image:AssetImage('assets/logo.png')
+                  ),
+                ),
+
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
