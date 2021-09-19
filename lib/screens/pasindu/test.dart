@@ -9,7 +9,7 @@ class Test1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(
-        appBarTitle: "reminders",
+        appBarTitle: "Dashboard",
       ),
       body: new Stack(
         children: <Widget>[
@@ -233,7 +233,7 @@ class Test2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(
-        appBarTitle: "reminders",
+        appBarTitle: "Reminders",
       ),
       body: new Stack(
         children: <Widget>[
@@ -256,14 +256,22 @@ class Test3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Container(
-      decoration: new BoxDecoration(
-        image: new DecorationImage(
-          image: new AssetImage('assets/background.png'),
-          fit: BoxFit.cover,
-        ),
+    return Scaffold(
+      appBar: customAppBar(
+        appBarTitle: "More",
       ),
-    ));
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage('assets/background.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: new Center(child: Text("More"))),
+        ],
+      ),
+    );
   }
 }
