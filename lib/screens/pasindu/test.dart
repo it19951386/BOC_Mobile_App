@@ -1,3 +1,4 @@
+import 'package:boc_mobile_app/screens/pasindu/dashboardTile.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
@@ -39,114 +40,23 @@ class Test1 extends StatelessWidget {
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 12),
-                          height: 120,
-                          width: 162,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(12)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.25),
-                                spreadRadius: 1,
-                                blurRadius: 7,
-                                offset:
-                                    Offset(0, 4), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(FontAwesomeIcons.userFriends),
-                              Text("Accounts")
-                            ],
-                          ),
+                        dashboardTile(
+                          icon: Icon(FontAwesomeIcons.userFriends),
+                          title: "Accounts",
                         ),
-                        Container(
-                          margin: EdgeInsets.only(
-                            top: 12,
-                          ),
-                          height: 120,
-                          width: 162,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(12)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.25),
-                                spreadRadius: 1,
-                                blurRadius: 7,
-                                offset:
-                                    Offset(0, 4), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(FontAwesomeIcons.cashRegister),
-                              Text("Pay Bills")
-                            ],
-                          ),
-                        ),
+                        dashboardTile(
+                            icon: Icon(FontAwesomeIcons.cashRegister),
+                            title: "Pay Bills")
                       ]),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 12),
-                        height: 120,
-                        width: 162,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              spreadRadius: 1,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 4), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.attach_money),
-                            Text("Third Party Transfer")
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(
-                          top: 12,
-                        ),
-                        height: 120,
-                        width: 162,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              spreadRadius: 1,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 4), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(FontAwesomeIcons.moneyBill),
-                            Text("Own Account Transfer")
-                          ],
-                        ),
-                      ),
+                      dashboardTile(
+                          icon: Icon(Icons.attach_money),
+                          title: "Third Party Transfer"),
+                      dashboardTile(
+                          icon: Icon(FontAwesomeIcons.moneyBill),
+                          title: "Own Account Transfer")
                     ],
                   ),
                 ],
