@@ -14,8 +14,9 @@ class ClickableText extends StatelessWidget {
         text: 'New to online Banking? ',
         style: TextStyle(
           fontWeight: FontWeight.bold,
+          fontFamily: 'Poppins',
           color: Colors.black54,
-          fontSize: 16,
+          fontSize: 14,
         ),
         children: [
           TextSpan(

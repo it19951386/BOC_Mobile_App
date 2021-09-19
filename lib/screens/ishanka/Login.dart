@@ -21,121 +21,116 @@ class Login extends StatelessWidget {
           backgroundColor: Colors.transparent,
 
           body: SingleChildScrollView(
-            child: SafeArea(
-              child: Column(
-                children: [
-                  Container(
-                    height: 250,
-                    child: Center(
-                      child: Image(
-                          image:AssetImage('assets/logo.png')
-                      ),
+            child: Column(
+              children: [
+                Container(
+                  height: 250,
+                  child: Center(
+                    child: Image(
+                        image:AssetImage('assets/logo.png')
                     ),
                   ),
+                ),
 
-                  Padding(
-                    padding:EdgeInsets.fromLTRB(10.0,0.0, 275.0, 0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Sign In',
-                          style:SignInText,
-                        ),
-
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Padding(
-                    padding:EdgeInsets.fromLTRB(10.0,0.0, 170.0, 0),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Please sign in to continue.',
-                          style:NText
-                        ),
-
-                      ],
-                    ),
-                  ),
-
-                  SizedBox(
-                    height: 30,
-                  ),
-
-                  //text filed
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    child: Column(
-                      children: [
-                        TextInput(
-                          icon: FontAwesomeIcons.user,
-                          hint: 'Email',
-                          inputType: TextInputType.emailAddress,
-                          inputAction: TextInputAction.next,
-                        ),
-
-                        SizedBox(
-                          height: 18,
-                        ),
-
-                        PasswordInput(
-                          icon: FontAwesomeIcons.lock,
-                          hint: 'Password',
-                          inputAction: TextInputAction.next,
-                        ),
-                      ],
-                    ),
-                  ),
-
-
-                  SizedBox(
-                    height: 18,
-                  ),
-
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                Padding(
+                  padding:EdgeInsets.fromLTRB(10.0,0.0, 275.0, 0),
+                  child: Column(
                     children: [
-                      //1
-                      RoundedButton(
-                        buttonText: 'Sign In',
+                      Text(
+                        'Sign In',
+                        style:SignInText,
                       ),
 
-                      //2
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 20),
-                        child: Text(
-                          "Forget Password?",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black54
-                          ),
-                        ),
-                      ),
-
-                      //3
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:55,vertical:20),
-                        child: ClickableText(),
-                      ),
-
-                      //4
-                      FloatingActionButton(
-                        onPressed: (){},
-                        backgroundColor: Colors.amberAccent,
-                        child: Icon(
-                          FontAwesomeIcons.phoneAlt,
-                          color: Colors.black,
-                        ),
-                      )
                     ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding:EdgeInsets.fromLTRB(10.0,0.0, 170.0, 0),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Please sign in to continue.',
+                        style:NText
+                      ),
+
+                    ],
+                  ),
+                ),
+
+                SizedBox(
+                  height: 30,
+                ),
+
+                //text filed
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ),
+                  child: Column(
+                    children: [
+                      TextInput(
+                        icon: FontAwesomeIcons.user,
+                        hint: 'Email',
+                        inputType: TextInputType.emailAddress,
+                        inputAction: TextInputAction.next,
+                      ),
+
+                      SizedBox(
+                        height: 18,
+                      ),
+
+                      PasswordInput(
+                        icon: FontAwesomeIcons.lock,
+                        hint: 'Password',
+                        inputAction: TextInputAction.next,
+                      ),
+                    ],
+                  ),
+                ),
+
+
+                SizedBox(
+                  height: 18,
+                ),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    //1
+                    RoundedButton(
+                      buttonText: 'Sign In',
+                    ),
+
+                    //2
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 20),
+                      child: Text(
+                        "Forget Password?",
+                        style: NText
+                      ),
+                    ),
+
+                    //3
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:60,vertical:20),
+                      child: ClickableText(),
+                    ),
+
+                    //4
+                    FloatingActionButton(
+                      onPressed: (){},
+                      backgroundColor: Colors.amberAccent,
+                      child: Icon(
+                        FontAwesomeIcons.phoneAlt,
+                        color: Colors.black,
+                      ),
+                    )
+                  ],
+                ),
+              ],
             ),
           ),
         ),
