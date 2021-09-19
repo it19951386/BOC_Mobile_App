@@ -1,3 +1,4 @@
+import 'package:boc_mobile_app/screens/ishanka/palatte.dart';
 import 'package:flutter/material.dart';
 import 'widgets/widgets.dart';
 
@@ -29,15 +30,12 @@ class Login extends StatelessWidget {
               ),
 
               Padding(
-                padding:EdgeInsets.fromLTRB(10.0,0.0, 280.0, 0),
+                padding:EdgeInsets.fromLTRB(10.0,0.0, 275.0, 0),
                 child: Column(
                   children: [
                     Text(
                       'Sign In',
-                      style:TextStyle(
-                          fontWeight:FontWeight.bold,
-                          fontSize: 24.0
-                      ) ,
+                      style:SignInText,
                     ),
 
                   ],
@@ -47,16 +45,12 @@ class Login extends StatelessWidget {
                 height: 5,
               ),
               Padding(
-                padding:EdgeInsets.fromLTRB(10.0,0.0, 184.0, 0),
+                padding:EdgeInsets.fromLTRB(10.0,0.0, 170.0, 0),
                 child: Column(
                   children: [
                     Text(
                       'Please sign in to continue.',
-                      style:TextStyle(
-                          fontWeight:FontWeight.bold,
-                          fontSize: 14.0,
-                          color:Colors.blueGrey
-                      ) ,
+                      style:NText
                     ),
 
                   ],
