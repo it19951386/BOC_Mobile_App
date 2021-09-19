@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
+import 'package:boc_mobile_app/screens/pasindu/dashboardCard.dart';
 
 class Test1 extends StatelessWidget {
   const Test1({Key? key}) : super(key: key);
@@ -25,84 +26,14 @@ class Test1 extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 12),
-                        height: 120,
-                        width: 366,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              spreadRadius: 1,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 4), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 12),
-                                child: Text(
-                                  "My Assets",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(right: 12),
-                                child: Text("LKR 10,434.00",
-                                    style: TextStyle(
-                                        color: Colors.green,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18)),
-                              )
-                            ]),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 12),
-                        height: 120,
-                        width: 366,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.25),
-                              spreadRadius: 1,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 4), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 12),
-                                child: Text(
-                                  "My Liabilities",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(right: 12),
-                                child: Text("LKR 124,548.00",
-                                    style: TextStyle(
-                                        color: Colors.red,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18)),
-                              )
-                            ]),
-                      ),
+                      dashboardCard(
+                          title: "My Assets",
+                          amount: "LKR 10,435.00",
+                          color: Colors.red),
+                      dashboardCard(
+                          title: "My Liabilities",
+                          amount: "LKR 8,434.00",
+                          color: Colors.green)
                     ],
                   ),
                   Row(
