@@ -97,8 +97,21 @@ class Login extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  //1
                   RoundedButton(
                     buttonText: 'Sign In',
+                  ),
+
+                  //2
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 20),
+                    child: Text(
+                      "Forget Password?",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black54
+                      ),
+                    ),
                   ),
 
                 ],
