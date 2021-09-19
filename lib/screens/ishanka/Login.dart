@@ -16,6 +16,19 @@ class Login extends StatelessWidget {
         BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
+          body: Column(
+            children: [
+              Container(
+                height: 250,
+                child: Center(
+                  child: Image(
+                      image:AssetImage('assets/logo.png')
+                  ),
+                ),
+
+              ),
+            ],
+          ),
         ),
       ],
     );
