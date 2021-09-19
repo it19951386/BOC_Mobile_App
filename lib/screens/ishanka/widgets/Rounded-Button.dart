@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../palatte.dart';
+
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
     Key? key,
@@ -23,9 +25,7 @@ class RoundedButton extends StatelessWidget {
         onPressed:() {} ,
         child: Text(
           buttonText,
-          style: TextStyle(
-            fontSize: 18,
-          ),
+          style: SButtonText
         ),
       ),
     );
