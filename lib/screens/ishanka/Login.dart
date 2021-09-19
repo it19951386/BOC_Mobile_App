@@ -120,6 +120,15 @@ class Login extends StatelessWidget {
                     child: ClickableText(),
                   ),
 
+                  //4
+                  FloatingActionButton(
+                    onPressed: (){},
+                    backgroundColor: Colors.amberAccent,
+                    child: Icon(
+                      FontAwesomeIcons.phoneAlt,
+                      color: Colors.black,
+                    ),
+                  )
                 ],
               ),
             ],
