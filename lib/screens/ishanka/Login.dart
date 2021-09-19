@@ -16,6 +16,7 @@ class Login extends StatelessWidget {
         BackgroundImage(),
         Scaffold(
           backgroundColor: Colors.transparent,
+
           body: Column(
             children: [
               Container(
@@ -25,7 +26,45 @@ class Login extends StatelessWidget {
                       image:AssetImage('assets/logo.png')
                   ),
                 ),
+              ),
 
+              Padding(
+                padding:EdgeInsets.fromLTRB(10.0,0.0, 280.0, 0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Sign In',
+                      style:TextStyle(
+                          fontWeight:FontWeight.bold,
+                          fontSize: 24.0
+                      ) ,
+                    ),
+
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Padding(
+                padding:EdgeInsets.fromLTRB(10.0,0.0, 184.0, 0),
+                child: Column(
+                  children: [
+                    Text(
+                      'Please sign in to continue.',
+                      style:TextStyle(
+                          fontWeight:FontWeight.bold,
+                          fontSize: 14.0,
+                          color:Colors.blueGrey
+                      ) ,
+                    ),
+
+                  ],
+                ),
+              ),
+
+              SizedBox(
+                height: 30,
               ),
             ],
           ),
