@@ -114,6 +114,12 @@ class Login extends StatelessWidget {
                     ),
                   ),
 
+                  //3
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal:55,vertical:20),
+                    child: ClickableText(),
+                  ),
+
                 ],
               ),
             ],
