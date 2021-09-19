@@ -11,7 +11,14 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BackgroundImage();
+    return Stack(
+      children: [
+        BackgroundImage(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+        ),
+      ],
+    );
   }
 }
 
