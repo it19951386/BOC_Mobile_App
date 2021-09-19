@@ -87,9 +87,22 @@ class Login extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ),
 
+
+              SizedBox(
+                height: 18,
+              ),
+
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  RoundedButton(
+                    buttonText: 'Sign In',
+                  ),
+
+                ],
+              ),
             ],
           ),
         ),
