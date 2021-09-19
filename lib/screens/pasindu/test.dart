@@ -1,4 +1,6 @@
+import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboardTile.dart';
+import 'package:boc_mobile_app/screens/pasindu/example.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
@@ -28,13 +30,17 @@ class Test1 extends StatelessWidget {
                   Column(
                     children: [
                       dashboardCard(
-                          title: "My Assets",
-                          amount: "LKR 10,435.00",
-                          color: Colors.red),
+                        title: "My Assets",
+                        amount: "LKR 10,435.00",
+                        color: Colors.red,
+                        nextScreen: example(),
+                      ),
                       dashboardCard(
-                          title: "My Liabilities",
-                          amount: "LKR 8,434.00",
-                          color: Colors.green)
+                        title: "My Liabilities",
+                        amount: "LKR 8,434.00",
+                        color: Colors.green,
+                        nextScreen: LoanList(),
+                      ),
                     ],
                   ),
                   Row(

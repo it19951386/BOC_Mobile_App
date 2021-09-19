@@ -7,11 +7,13 @@ class dashboardCard extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.amount,
-      required this.color})
+      required this.color,
+      required this.nextScreen})
       : super(key: key);
 
   final String title, amount;
   final Color color;
+  final Widget nextScreen;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -19,7 +21,7 @@ class dashboardCard extends StatelessWidget {
           print("card tapped");
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => LoanList()),
+            MaterialPageRoute(builder: (context) => this.nextScreen),
           );
         },
         child: Container(
