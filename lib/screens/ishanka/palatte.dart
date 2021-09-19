@@ -14,3 +14,7 @@ const TextStyle NText = TextStyle(
     fontFamily: 'Poppins'
 );
 
+const TextStyle TBodyText = TextStyle(
+    fontSize: 18,
+    color: Colors.black26
+);

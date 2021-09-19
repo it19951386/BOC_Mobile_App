@@ -1,6 +1,7 @@
 import 'package:boc_mobile_app/screens/ishanka/palatte.dart';
 import 'package:flutter/material.dart';
 import 'widgets/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() => runApp(MaterialApp(
   home: Login(),
@@ -60,6 +61,35 @@ class Login extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
+
+              //text filed
+              Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Column(
+                  children: [
+                    TextInput(
+                      icon: FontAwesomeIcons.user,
+                      hint: 'Email',
+                      inputType: TextInputType.emailAddress,
+                      inputAction: TextInputAction.next,
+                    ),
+
+                    SizedBox(
+                      height: 18,
+                    ),
+
+                    PasswordInput(
+                      icon: FontAwesomeIcons.lock,
+                      hint: 'Password',
+                      inputAction: TextInputAction.next,
+                    ),
+                  ],
+                ),
+
+              ),
+
             ],
           ),
         ),
