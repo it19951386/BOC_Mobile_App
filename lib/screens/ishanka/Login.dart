@@ -119,7 +119,7 @@ class Login extends StatelessWidget {
                       child: ClickableText(),
                     ),
 
-                    //4
+
                     FloatingActionButton(
                       onPressed: (){},
                       backgroundColor: Colors.amberAccent,
