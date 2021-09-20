@@ -1,66 +1,74 @@
+import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
+import 'package:boc_mobile_app/screens/pasindu/dashboardTile.dart';
+import 'package:boc_mobile_app/screens/pasindu/example.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
+import 'package:boc_mobile_app/screens/pasindu/dashboardCard.dart';
 
 class Test1 extends StatelessWidget {
   const Test1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              height: 120,
-              width: 366,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
+    return Scaffold(
+      appBar: customAppBar(
+        appBarTitle: "Dashboard",
+      ),
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage('assets/background.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: new Center(
+                  child: Column(
+                children: [
+                  Column(
+                    children: [
+                      dashboardCard(
+                        title: "My Assets",
+                        amount: "LKR 10,435.00",
+                        color: Colors.red,
+                        nextScreen: example(),
+                      ),
+                      dashboardCard(
+                        title: "My Liabilities",
+                        amount: "LKR 8,434.00",
+                        color: Colors.green,
+                        nextScreen: LoanList(),
+                      ),
+                    ],
+                  ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        dashboardTile(
+                          icon: Icon(FontAwesomeIcons.userFriends),
+                          title: "Accounts",
+                        ),
+                        dashboardTile(
+                            icon: Icon(FontAwesomeIcons.cashRegister),
+                            title: "Pay Bills")
+                      ]),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      dashboardTile(
+                          icon: Icon(Icons.attach_money),
+                          title: "Third Party Transfer"),
+                      dashboardTile(
+                          icon: Icon(FontAwesomeIcons.moneyBill),
+                          title: "Own Account Transfer")
+                    ],
                   ),
                 ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              height: 120,
-              width: 366,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    topRight: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        Row(
-          children: [Text("d"), Text("d")],
-        ),
-        Row(
-          children: [Text("d"), Text("d")],
-        ),
-      ],
+              ))),
+        ],
+      ),
     );
   }
 }
@@ -70,9 +78,21 @@ class Test2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("Reminder"),
+    return Scaffold(
+      appBar: customAppBar(
+        appBarTitle: "Reminders",
+      ),
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage('assets/background.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: new Center(child: Text("Reminders"))),
+        ],
       ),
     );
   }
@@ -83,9 +103,21 @@ class Test3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("More"),
+    return Scaffold(
+      appBar: customAppBar(
+        appBarTitle: "More",
+      ),
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new AssetImage('assets/background.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: new Center(child: Text("More"))),
+        ],
       ),
     );
   }
