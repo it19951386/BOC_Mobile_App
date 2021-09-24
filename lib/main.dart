@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/test.dart';
+import 'package:boc_mobile_app/screens/charith/reminder.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
-  final List _children = [Test1(), Test2(), Test3()];
+  final List _children = [Test1(), Reminder(), Test3()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
