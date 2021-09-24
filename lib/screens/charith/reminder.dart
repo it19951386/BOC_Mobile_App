@@ -27,6 +27,32 @@ class _ReminderState extends State<Reminder> {
                 fit: BoxFit.cover,
               ),
             ),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: LayoutBuilder(builder: (BuildContext context,
+                      BoxConstraints viewportConstraints) {
+                    return SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: viewportConstraints.maxHeight,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Calender(),
+                            SizedBox(
+                              height: 20.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ],
+            ),
           )
         ],
       ),
