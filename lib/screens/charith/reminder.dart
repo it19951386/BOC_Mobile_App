@@ -106,6 +106,42 @@ class _ReminderState extends State<Reminder> {
                                     margin:
                                         EdgeInsets.fromLTRB(30, 40, 30, 0.0),
                                   ),
+                                  Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          12.0, 20.0, 12.0, 20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: <Widget>[
+                                          Text(
+                                            'Request Account Status',
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          Text(
+                                            'This is card body',
+                                            style: TextStyle(fontSize: 18),
+                                          ),
+                                          Text(
+                                            '26/05/2021',
+                                            textAlign: TextAlign.right,
+                                            style: TextStyle(
+                                                color: Colors.grey[800]),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    elevation: 5.0,
+                                    margin:
+                                        EdgeInsets.fromLTRB(30, 20, 30, 0.0),
+                                  ),
                                 ],
                               ),
                             ),
