@@ -45,6 +45,30 @@ class _ReminderState extends State<Reminder> {
                             SizedBox(
                               height: 20.0,
                             ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: <Color>[
+                                      Colors.amber.shade300,
+                                      Colors.amber.shade200
+                                    ],
+                                    stops: [0.2, 0.8],
+                                  ),
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(30)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 5,
+                                      blurRadius: 7,
+                                      offset: Offset(0, 3),
+                                    ),
+                                  ]),
+                              height: 500.0,
+                              alignment: Alignment.topCenter,
+                            ),
                           ],
                         ),
                       ),
