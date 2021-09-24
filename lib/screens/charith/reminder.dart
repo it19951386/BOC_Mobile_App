@@ -68,6 +68,40 @@ class _ReminderState extends State<Reminder> {
                                   ]),
                               height: 500.0,
                               alignment: Alignment.topCenter,
+                              child: Column(
+                                children: <Widget>[
+                                  Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          12.0, 20.0, 12.0, 20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: <Widget>[
+                                          Text(
+                                            'Transfer Credit',
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          Text(
+                                            'This is card body',
+                                            style: TextStyle(fontSize: 18),
+                                          ),
+                                          Text(
+                                            '12/06/2021',
+                                            textAlign: TextAlign.right,
+                                            style: TextStyle(
+                                                color: Colors.grey[800]),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
