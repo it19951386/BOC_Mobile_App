@@ -99,6 +99,12 @@ class _ReminderState extends State<Reminder> {
                                         ],
                                       ),
                                     ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    elevation: 5.0,
+                                    margin:
+                                        EdgeInsets.fromLTRB(30, 40, 30, 0.0),
                                   ),
                                 ],
                               ),
