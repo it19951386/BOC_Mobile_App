@@ -16,6 +16,16 @@ class _CalenderState extends State<Calender> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Card(
+        elevation: 5.0,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        margin: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+        ),
+      ),
+    );
   }
 }
