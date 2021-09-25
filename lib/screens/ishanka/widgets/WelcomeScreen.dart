@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets.dart';
+import '../palatte.dart';
 
 void main() =>runApp(MaterialApp(
   home: WelcomeScreen(),
@@ -28,6 +29,49 @@ class WelcomeScreen extends StatelessWidget {
                ),
                padding: EdgeInsets.fromLTRB(0, 90, 0, 50),
              ),
+
+              Padding(
+                padding: EdgeInsets.fromLTRB(15.0,0.0, 20.0, 0),
+                child:Column(
+                  children: [
+                    Text(
+                      'WELCOME',
+                      style: Welcome,
+                    ),
+                  ],
+                ) ,
+              ),
+              Padding(
+                padding:EdgeInsets.fromLTRB(20.0,0.0, 20.0, 0),
+                child: Column(
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: 'TO THE ',
+                        style: TextStyle(
+
+                          fontFamily: 'Poppins',
+                          color: Colors.black,
+                          fontSize: 22,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: 'BOC BANK APP !',
+                              style: TextStyle(
+                                  color: Colors.orange,
+                                  fontWeight: FontWeight.bold
+
+                              )
+
+                          ),
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+              )
+
             ],
           ),
         ),

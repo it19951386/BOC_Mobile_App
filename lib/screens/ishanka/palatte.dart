@@ -28,3 +28,18 @@ const TextStyle SButtonText = TextStyle(
     fontWeight:FontWeight.bold,
     fontFamily: 'Poppins'
 );
+
+//welcome
+const TextStyle Welcome = TextStyle(
+    fontSize: 45,
+    letterSpacing: 2,
+    fontFamily: 'Poppins'
+);
+
+
+//welcome
+const TextStyle Welcome2 = TextStyle(
+    fontSize: 22,
+    letterSpacing: 2,
+    fontFamily: 'Poppins'
+);
