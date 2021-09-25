@@ -1,3 +1,4 @@
+import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -10,13 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-        primarySwatch: Colors.blue,
-      ),
-      home: Dashboard(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+          primarySwatch: Colors.blue,
+        ),
+        home: LoanList());
   }
 }

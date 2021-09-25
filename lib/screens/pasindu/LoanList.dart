@@ -1,3 +1,4 @@
+import 'package:boc_mobile_app/screens/pasindu/BackgroundSet.dart';
 import 'package:boc_mobile_app/screens/pasindu/CustomAppBar.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +12,16 @@ class LoanList extends StatelessWidget {
         appBarTitle: "Loans",
         showBackButton: true,
       ),
-      body: Container(
-        child: Center(
-          child: Text("LoanList"),
-        ),
-      ),
+      body: LoanListBody(),
     );
+  }
+}
+
+class LoanListBody extends StatelessWidget {
+  const LoanListBody({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BackgroundSet();
   }
 }
