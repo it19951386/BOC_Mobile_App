@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'widgets.dart';
 
 void main() =>runApp(MaterialApp(
   home: WelcomeScreen(),
@@ -12,6 +12,10 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Stack(
+      children: [
+        BackgroundImage(),
+      ],
+    );
   }
 }
