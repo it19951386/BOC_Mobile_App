@@ -1,3 +1,5 @@
+import 'package:boc_mobile_app/main.dart';
+
 import 'palatte.dart';
 import 'package:flutter/material.dart';
 import 'widgets/clickable-text.dart';
@@ -102,6 +104,7 @@ class Login extends StatelessWidget {
                     //1
                     RoundedButton(
                       buttonText: 'Sign In',
+                      nextScreen: Login(),
                     ),
 
                     //2
@@ -119,7 +122,9 @@ class Login extends StatelessWidget {
                       child: ClickableText(),
                     ),
 
-                    //4
+
+                    //4 test
+
                     FloatingActionButton(
                       onPressed: (){},
                       backgroundColor: Colors.amberAccent,

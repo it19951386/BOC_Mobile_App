@@ -1,5 +1,4 @@
 import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
-import 'package:boc_mobile_app/screens/pasindu/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
