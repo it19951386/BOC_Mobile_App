@@ -14,6 +14,7 @@ class DashboardTab extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarTitle: "Dashboard",
+        showBackButton: false,
       ),
       body: new Stack(
         children: <Widget>[
@@ -93,9 +94,7 @@ class Test2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        appBarTitle: "Reminders",
-      ),
+      appBar: CustomAppBar(appBarTitle: "Reminders", showBackButton: false),
       body: new Stack(
         children: <Widget>[
           new Container(
@@ -120,6 +119,7 @@ class Test3 extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         appBarTitle: "More",
+        showBackButton: false,
       ),
       body: new Stack(
         children: <Widget>[

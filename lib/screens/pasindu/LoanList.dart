@@ -7,7 +7,10 @@ class LoanList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(appBarTitle: "Loans"),
+      appBar: CustomAppBar(
+        appBarTitle: "Loans",
+        showBackButton: true,
+      ),
       body: Container(
         child: Center(
           child: Text("LoanList"),
