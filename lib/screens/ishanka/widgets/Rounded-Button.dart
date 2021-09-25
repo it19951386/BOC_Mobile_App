@@ -5,10 +5,11 @@ import '../palatte.dart';
 class RoundedButton extends StatelessWidget {
   const RoundedButton({
     Key? key,
-    required this.buttonText,
+    required this.buttonText, required this.nextScreen,
   }) : super(key: key);
 
   final String buttonText;
+  final Widget nextScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,13 @@ class RoundedButton extends StatelessWidget {
       ),
       ),
       child: FlatButton(
-        onPressed:() {} ,
+        onPressed:() {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => this.nextScreen),
+          );
+
+        } ,
         child: Text(
           buttonText,
           style: SButtonText
