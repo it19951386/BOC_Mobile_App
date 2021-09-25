@@ -47,12 +47,14 @@ class BackgroundSet extends StatelessWidget {
               alignment: Alignment.center,
               child: Column(
                 children: [
+                  SizedBox(height: 25),
                   Container(
                     child: LoanCard(
                         title: '085227453 MALABE',
                         accnumber: 'Account No:- 085227453',
                         balance: 'Loan Outstanding Balance:- LKR 24,548.00'),
                   ),
+                  SizedBox(height: 25),
                   Container(
                     child: LoanCard(
                         title: '085227453 MALABE',

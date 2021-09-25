@@ -11,10 +11,14 @@ class LoanCard extends StatelessWidget {
   final String title;
   final String accnumber;
   final String balance;
+
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData = MediaQuery.of(context);
+
     return Container(
       height: 130,
+      width: queryData.size.width * 0.9,
       margin: EdgeInsets.only(left: 23, right: 23),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -28,13 +32,29 @@ class LoanCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title),
-          Text(accnumber),
-          Text(balance),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(left: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: Text(title),
+            ),
+            Container(
+              child: Text(accnumber),
+            ),
+            Container(
+              child: Text(balance),
+            ),
+            SizedBox(
+              height: 20,
+            )
+          ],
+        ),
       ),
     );
   }
