@@ -1,5 +1,6 @@
 import 'package:boc_mobile_app/screens/charith/reminder.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
+import 'package:boc_mobile_app/screens/pasindu/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +18,6 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Poppins',
           primarySwatch: Colors.blue,
         ),
-        home: LoanList());
+        home: Dashboard());
   }
 }
