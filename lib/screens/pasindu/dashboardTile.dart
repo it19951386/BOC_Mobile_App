@@ -9,15 +9,9 @@ class dashboardTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 1,
       child: InkWell(
-        onTap: () {
-          print("tapped");
-        },
         child: Container(
           margin: EdgeInsets.only(left: 23, right: 23),
-          // height: 120,
-          // width: 162,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -32,7 +26,13 @@ class dashboardTile extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [icon, Text(title)],
+            children: [
+              icon,
+              Text(
+                title,
+                style: TextStyle(fontSize: 13),
+              )
+            ],
           ),
         ),
       ),

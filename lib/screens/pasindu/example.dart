@@ -8,7 +8,7 @@ class example extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        appBarTitle: "Loans",
+        appBarTitle: "Accounts",
         showBackButton: true,
       ),
       body: Container(
