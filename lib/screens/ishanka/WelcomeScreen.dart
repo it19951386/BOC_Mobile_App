@@ -35,6 +35,7 @@ class WelcomeScreen extends StatelessWidget {
                padding: EdgeInsets.fromLTRB(0, 90, 0, 50),
              ),
 
+              //Title_1
               Padding(
                 padding: EdgeInsets.fromLTRB(15.0,0.0, 20.0, 0),
                 child:Column(
@@ -47,6 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                 ) ,
               ),
 
+              //Title_2
               Padding(
                 padding:EdgeInsets.fromLTRB(20.0,0.0, 20.0, 0),
                 child: Column(
@@ -77,6 +79,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
 
+              //RoundedButton
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 75, 10, 20),
                 child: RoundedButton(
@@ -85,11 +88,13 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
 
+              //clickable text
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
                 child: ClickableText(),
               ),
 
+              //add tiles
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
