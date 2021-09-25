@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class dashboardCard extends StatelessWidget {
-  const dashboardCard(
+  dashboardCard(
       {Key? key,
       required this.title,
       required this.amount,
