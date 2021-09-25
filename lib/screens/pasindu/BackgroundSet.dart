@@ -52,14 +52,14 @@ class BackgroundSet extends StatelessWidget {
                     child: LoanCard(
                         title: '085227453 MALABE',
                         accnumber: 'Account No:- 085227453',
-                        balance: 'Loan Outstanding Balance:- LKR 24,548.00'),
+                        balance: 'Loan Outstanding :- LKR 24,548.00'),
                   ),
                   SizedBox(height: 25),
                   Container(
                     child: LoanCard(
                         title: '087144256 MALABE',
                         accnumber: 'Account No:- 087144256',
-                        balance: 'Loan Outstanding Balance:- LKR 100,000.00'),
+                        balance: 'Loan Outstanding :- LKR 100,000.00'),
                   )
                 ],
               ),

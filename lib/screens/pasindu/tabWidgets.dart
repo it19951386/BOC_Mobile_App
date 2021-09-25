@@ -25,8 +25,7 @@ class DashboardTab extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: new Center(
-                  child: Column(
+              child: Column(
                 children: [
                   SizedBox(height: 30),
                   Expanded(
@@ -81,7 +80,7 @@ class DashboardTab extends StatelessWidget {
                   ),
                   SizedBox(height: 30),
                 ],
-              ))),
+              )),
         ],
       ),
     );
