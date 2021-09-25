@@ -42,13 +42,22 @@ class LoanCard extends StatelessWidget {
               height: 20,
             ),
             Container(
-              child: Text(title),
+              child: Text(
+                title,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ),
             Container(
-              child: Text(accnumber),
+              child: Text(
+                accnumber,
+                style: TextStyle(fontSize: 16),
+              ),
             ),
             Container(
-              child: Text(balance),
+              child: Text(
+                balance,
+                style: TextStyle(fontSize: 16),
+              ),
             ),
             SizedBox(
               height: 20,
