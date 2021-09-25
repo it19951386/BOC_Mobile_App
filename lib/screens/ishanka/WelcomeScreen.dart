@@ -4,14 +4,13 @@ import 'palatte.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() =>runApp(MaterialApp(
-  home: WelcomeScreen(),
+  home: SplashScreen(),
   debugShowCheckedModeBanner: false,
   initialRoute: '/',
   routes: {
     'SendRegister': (context)=> Login(),
   },
 ));
-
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -81,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
 
               //RoundedButton
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 75, 10, 20),
+                padding: const EdgeInsets.fromLTRB(30, 75, 30, 20),
                 child: RoundedButton(
                   buttonText: 'Sign In',
                   nextScreen: Login(),
