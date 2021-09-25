@@ -15,8 +15,9 @@ class _ReminderState extends State<Reminder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
+      appBar: CustomAppBar(
         appBarTitle: "Reminders",
+        showBackButton: false,
       ),
       body: new Stack(
         children: <Widget>[
