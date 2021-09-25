@@ -1,6 +1,5 @@
 import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class dashboardCard extends StatelessWidget {
   dashboardCard(
@@ -23,7 +22,7 @@ class dashboardCard extends StatelessWidget {
             print("card tapped");
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => this.nextScreen),
+              MaterialPageRoute(builder: (context) => nextScreen),
             );
           },
           child: Container(
