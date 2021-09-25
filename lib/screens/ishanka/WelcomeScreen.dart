@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/widgets.dart';
 import 'palatte.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() =>runApp(MaterialApp(
   home: WelcomeScreen(),
@@ -45,6 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ) ,
               ),
+
               Padding(
                 padding:EdgeInsets.fromLTRB(20.0,0.0, 20.0, 0),
                 child: Column(
@@ -74,6 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 75, 10, 20),
                 child: RoundedButton(
@@ -81,11 +84,33 @@ class WelcomeScreen extends StatelessWidget {
                   nextScreen: Login(),
                 ),
               ),
+
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
                 child: ClickableText(),
               ),
 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  WelcomeTile(
+                    title: "Find Us",
+                    icon: Icon(FontAwesomeIcons.mapMarkerAlt),
+                    nextScreen: WelcomeScreen(),
+                  ),
+                  WelcomeTile(
+                    title: "FAQ's",
+                    icon: Icon(FontAwesomeIcons.questionCircle),
+                    nextScreen: WelcomeScreen(),
+                  ),
+                  WelcomeTile(
+                    title: "Offers",
+                    icon: Icon(FontAwesomeIcons.gift),
+                    nextScreen: WelcomeScreen(),
+                  ),
+
+                ],
+              )
 
             ],
           ),
