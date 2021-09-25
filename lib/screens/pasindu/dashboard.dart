@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:boc_mobile_app/screens/pasindu/test.dart';
+import 'package:boc_mobile_app/screens/pasindu/tabWidgets.dart';
 
 class Dashboard extends StatefulWidget {
   Dashboard({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int _currentIndex = 0;
-  final List _children = [Test1(), Test2(), Test3()];
+  final List _children = [DashboardTab(), Test2(), Test3()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
