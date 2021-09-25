@@ -5,6 +5,10 @@ import 'palatte.dart';
 void main() =>runApp(MaterialApp(
   home: WelcomeScreen(),
   debugShowCheckedModeBanner: false,
+  initialRoute: '/',
+  routes: {
+    'SendRegister': (context)=> Login(),
+  },
 ));
 
 
@@ -77,7 +81,10 @@ class WelcomeScreen extends StatelessWidget {
                   nextScreen: Login(),
                 ),
               ),
-
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 100),
+                child: ClickableText(),
+              ),
 
 
             ],
