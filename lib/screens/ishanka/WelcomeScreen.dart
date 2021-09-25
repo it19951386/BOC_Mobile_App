@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widgets.dart';
-import '../palatte.dart';
+import 'widgets/widgets.dart';
+import 'palatte.dart';
 
 void main() =>runApp(MaterialApp(
   home: WelcomeScreen(),
@@ -67,10 +67,18 @@ class WelcomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
                   ],
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 75, 10, 20),
+                child: RoundedButton(
+                  buttonText: 'Sign In',
+                  nextScreen: Login(),
+                ),
+              ),
+
+
 
             ],
           ),
