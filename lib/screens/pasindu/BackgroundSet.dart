@@ -2,7 +2,7 @@ import 'package:boc_mobile_app/screens/charith/reminder.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanCard.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboardCard.dart';
 import 'package:flutter/material.dart';
-
+//
 class BackgroundSet extends StatelessWidget {
   const BackgroundSet({Key? key}) : super(key: key);
 
