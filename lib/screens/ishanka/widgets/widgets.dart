@@ -6,3 +6,4 @@ export 'clickable-text.dart';
 export '../Login.dart';
 export 'welcome_tile.dart';
 export '../SplashScreen.dart';
+export '../SignUp.dart';
