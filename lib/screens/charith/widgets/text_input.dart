@@ -19,6 +19,34 @@ class TextInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(width: 3.0, color: Colors.amberAccent),
+          borderRadius: BorderRadius.circular(14),
+          boxShadow: [
+            BoxShadow(blurRadius: 5, color: Colors.grey, offset: Offset(0, 4))
+          ]),
+      child: TextField(
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(vertical: 10),
+          border: InputBorder.none,
+          hintText: hint,
+          labelText: label,
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Icon(
+              icon,
+              size: 18,
+              color: Colors.grey,
+            ),
+          ),
+          hintStyle: ApptextStyle.HINT_TEXT,
+          labelStyle: ApptextStyle.TEXT_LABEL,
+        ),
+        keyboardType: inputType,
+        textInputAction: inputAction,
+      ),
+    );
   }
 }
