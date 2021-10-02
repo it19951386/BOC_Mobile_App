@@ -97,6 +97,21 @@ class _AddReminderState extends State<AddReminder> {
                                     inputType: TextInputType.name,
                                   ),
                                 ),
+                                SizedBox(height: 10),
+                                /************************
+                                        Description
+                                ************************/
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 30),
+                                  child: DescriptionText(
+                                    icon: FontAwesomeIcons.listAlt,
+                                    label: 'Description',
+                                    hint: 'Enter description',
+                                    inputAction: TextInputAction.next,
+                                    inputType: TextInputType.multiline,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
