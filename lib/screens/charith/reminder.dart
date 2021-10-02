@@ -1,8 +1,10 @@
+import 'package:boc_mobile_app/screens/charith/addReminder.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:boc_mobile_app/screens/charith/widgets/calender.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
 import 'package:boc_mobile_app/screens/charith/data/utils.dart';
+import 'package:boc_mobile_app/screens/charith/widgets/export_widegts.dart';
 
 class Reminder extends StatefulWidget {
   const Reminder({Key? key}) : super(key: key);
@@ -42,6 +44,7 @@ class _ReminderState extends State<Reminder> {
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
+                            //importing calender widget
                             Calender(),
                             SizedBox(
                               height: 20.0,
@@ -49,14 +52,18 @@ class _ReminderState extends State<Reminder> {
                             Container(
                               decoration: BoxDecoration(
                                   gradient: LinearGradient(
-                                    begin: Alignment.centerLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: <Color>[
-                                      Colors.amber.shade300,
-                                      Colors.amber.shade200
-                                    ],
-                                    stops: [0.2, 0.8],
-                                  ),
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                      colors: <Color>[
+                                        Colors.amber.shade400,
+                                        Colors.amber.shade200,
+                                        Colors.amber.shade300
+                                      ],
+                                      stops: [
+                                        0.2,
+                                        0.6,
+                                        0.9
+                                      ]),
                                   borderRadius: BorderRadius.vertical(
                                       top: Radius.circular(30)),
                                   boxShadow: [
@@ -67,84 +74,9 @@ class _ReminderState extends State<Reminder> {
                                       offset: Offset(0, 3),
                                     ),
                                   ]),
-                              height: 500.0,
+                              height: 800.0,
                               alignment: Alignment.topCenter,
-                              child: Column(
-                                children: <Widget>[
-                                  Card(
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          12.0, 20.0, 12.0, 20.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: <Widget>[
-                                          Text(
-                                            'Transfer Credit',
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 20),
-                                          Text(
-                                            'This is card body',
-                                            style: TextStyle(fontSize: 18),
-                                          ),
-                                          Text(
-                                            '12/06/2021',
-                                            textAlign: TextAlign.right,
-                                            style: TextStyle(
-                                                color: Colors.grey[800]),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                    ),
-                                    elevation: 5.0,
-                                    margin:
-                                        EdgeInsets.fromLTRB(30, 40, 30, 0.0),
-                                  ),
-                                  Card(
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          12.0, 20.0, 12.0, 20.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: <Widget>[
-                                          Text(
-                                            'Request Account Status',
-                                            style: TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 20),
-                                          Text(
-                                            'This is card body',
-                                            style: TextStyle(fontSize: 18),
-                                          ),
-                                          Text(
-                                            '26/05/2021',
-                                            textAlign: TextAlign.right,
-                                            style: TextStyle(
-                                                color: Colors.grey[800]),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                    ),
-                                    elevation: 5.0,
-                                    margin:
-                                        EdgeInsets.fromLTRB(30, 20, 30, 0.0),
-                                  ),
-                                ],
-                              ),
+                              child: ReminderCard(), //importing reminder cards
                             ),
                           ],
                         ),
@@ -158,7 +90,10 @@ class _ReminderState extends State<Reminder> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddReminder()));
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,
