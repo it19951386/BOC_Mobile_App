@@ -270,6 +270,19 @@ class _AddReminderState extends State<AddReminder> {
                                     ),
                                   ),
                                 ),
+                                SizedBox(height: 50),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 30),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      ClearButton(),
+                                      SaveButton(),
+                                    ],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
