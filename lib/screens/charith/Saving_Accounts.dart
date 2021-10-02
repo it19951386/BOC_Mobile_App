@@ -20,6 +20,43 @@ class SavingAccounts extends StatelessWidget {
               ),
             ),
           ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Container(
+                height: 550,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.bottomRight,
+                      colors: <Color>[
+                        Colors.amber.shade300,
+                        Colors.amber.shade200
+                      ],
+                      stops: [0.2, 0.8],
+                    ),
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(30)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ]),
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    SizedBox(height: 25),
+                    AccountCard(),
+                  ],
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );

@@ -11,3 +11,4 @@ export 'activityCard.dart';
 export 'accountTab_View.dart';
 export 'detailsTab.dart';
 export 'detailsCard.dart';
+export 'accountCards.dart';
