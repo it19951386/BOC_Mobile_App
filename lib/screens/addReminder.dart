@@ -112,6 +112,79 @@ class _AddReminderState extends State<AddReminder> {
                                     inputType: TextInputType.multiline,
                                   ),
                                 ),
+                                SizedBox(height: 10),
+                                /****************************
+                                        Date Picker Container
+                                     ****************************/
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 30),
+                                  child: new Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 3.0,
+                                            color: Colors.amberAccent),
+                                        borderRadius: BorderRadius.circular(14),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              blurRadius: 5,
+                                              color: Colors.grey,
+                                              offset: Offset(0, 4))
+                                        ]),
+                                    child: TextField(
+                                      controller:
+                                          dateinput, //editing controller of this TextField
+                                      decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 10),
+                                        border: InputBorder.none,
+                                        hintText: '2021-09-25',
+                                        labelText: 'Date',
+                                        prefixIcon: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 20),
+                                          child: Icon(
+                                            Icons.calendar_today,
+                                            size: 18,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                        hintStyle: ApptextStyle.HINT_TEXT,
+                                        labelStyle: ApptextStyle.TEXT_LABEL,
+                                      ),
+                                      readOnly: true,
+                                      onTap: () async {
+                                        DateTime? pickedDate =
+                                            await showDatePicker(
+                                                context: context,
+                                                initialDate: DateTime.now(),
+                                                firstDate: DateTime(
+                                                    2000), //DateTime.now() - not to allow to choose before today.
+                                                lastDate: DateTime(2101));
+
+                                        if (pickedDate != null) {
+                                          print(
+                                              pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                                          String formattedDate =
+                                              DateFormat('yyyy-MM-dd')
+                                                  .format(pickedDate);
+                                          print(
+                                              formattedDate); //formatted date output using intl package =>  2021-03-16
+                                          //you can implement different kind of Date Format here according to your requirement
+
+                                          setState(() {
+                                            dateinput.text =
+                                                formattedDate; //set output date to TextField value.
+                                          });
+                                        } else {
+                                          print("Date is not selected");
+                                        }
+                                      },
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
