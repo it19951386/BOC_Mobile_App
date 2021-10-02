@@ -51,7 +51,36 @@ class _AddReminderState extends State<AddReminder> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           SizedBox(height: 120),
-                          Container(),
+                          Container(
+                            alignment: Alignment.bottomCenter,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: <Color>[
+                                    Colors.amber.shade400,
+                                    Colors.amber.shade200,
+                                    Colors.amber.shade300
+                                  ],
+                                  stops: [
+                                    0.3,
+                                    0.6,
+                                    0.7
+                                  ]),
+                              borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(30)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset: Offset(
+                                      0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            height: 700.0,
+                          ),
                         ],
                       ),
                     ),
