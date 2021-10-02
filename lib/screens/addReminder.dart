@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:boc_mobile_app/screens/charith/widgets/export_widegts.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddReminder extends StatefulWidget {
   const AddReminder({Key? key}) : super(key: key);
@@ -12,8 +13,31 @@ class AddReminder extends StatefulWidget {
 }
 
 class _AddReminderState extends State<AddReminder> {
+  TextEditingController dateinput = TextEditingController();
+  //create Datepicker object called dateinput
+
+  @override
+  void initState() {
+    dateinput.text = ""; //set the initial value of text field
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: CustomAppBar(appBarTitle: "Reminder", showBackButton: true),
+      body: Stack(
+        children: [
+          new Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage('assets/images/background.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
