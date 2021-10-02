@@ -41,7 +41,7 @@ class _AddReminderState extends State<AddReminder> {
             ),
           ),
           new Column(
-            children: [
+            children: <Widget>[
               Expanded(
                 child: LayoutBuilder(builder:
                     (BuildContext context, BoxConstraints viewportConstraints) {
@@ -53,7 +53,7 @@ class _AddReminderState extends State<AddReminder> {
                       child: new Column(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
+                        children: <Widget>[
                           SizedBox(height: 120),
                           Container(
                             alignment: Alignment.bottomCenter,
@@ -85,11 +85,11 @@ class _AddReminderState extends State<AddReminder> {
                             ),
                             height: 700.0,
                             child: Column(
-                              children: [
+                              children: <Widget>[
                                 SizedBox(height: 40),
                                 /************************
                                         Subject
-                                ************************/
+                                     ************************/
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 30),
@@ -104,7 +104,7 @@ class _AddReminderState extends State<AddReminder> {
                                 SizedBox(height: 10),
                                 /************************
                                         Description
-                                ************************/
+                                     ************************/
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 30),
@@ -119,7 +119,7 @@ class _AddReminderState extends State<AddReminder> {
                                 SizedBox(height: 10),
                                 /****************************
                                         Date Picker Container
-                                ****************************/
+                                     ****************************/
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 30),
@@ -282,7 +282,7 @@ class _AddReminderState extends State<AddReminder> {
                                       SaveButton(),
                                     ],
                                   ),
-                                ),
+                                )
                               ],
                             ),
                           ),
@@ -291,9 +291,9 @@ class _AddReminderState extends State<AddReminder> {
                     ),
                   );
                 }),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
