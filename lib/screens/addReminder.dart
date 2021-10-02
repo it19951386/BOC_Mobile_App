@@ -16,9 +16,13 @@ class _AddReminderState extends State<AddReminder> {
   TextEditingController dateinput = TextEditingController();
   //create Datepicker object called dateinput
 
+  TextEditingController timeinput = TextEditingController();
+  //create object called timeinput
+
   @override
   void initState() {
     dateinput.text = ""; //set the initial value of text field
+    timeinput.text = ""; //set the initial value of text field
     super.initState();
   }
 
