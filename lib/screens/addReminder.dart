@@ -80,6 +80,25 @@ class _AddReminderState extends State<AddReminder> {
                               ],
                             ),
                             height: 700.0,
+                            child: Column(
+                              children: [
+                                SizedBox(height: 40),
+                                /************************
+                                        Subject
+                                ************************/
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 30),
+                                  child: TextInput(
+                                    icon: FontAwesomeIcons.fileSignature,
+                                    label: 'Subject',
+                                    hint: 'Enter Subject',
+                                    inputAction: TextInputAction.next,
+                                    inputType: TextInputType.name,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
