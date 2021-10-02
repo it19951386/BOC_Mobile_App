@@ -9,3 +9,5 @@ export 'datePicker.dart';
 export 'reminder_card.dart';
 export 'activityCard.dart';
 export 'accountTab_View.dart';
+export 'detailsTab.dart';
+export 'detailsCard.dart';
