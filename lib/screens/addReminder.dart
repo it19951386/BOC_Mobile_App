@@ -36,6 +36,30 @@ class _AddReminderState extends State<AddReminder> {
               ),
             ),
           ),
+          new Column(
+            children: [
+              Expanded(
+                child: LayoutBuilder(builder:
+                    (BuildContext context, BoxConstraints viewportConstraints) {
+                  return SingleChildScrollView(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: viewportConstraints.maxHeight,
+                      ),
+                      child: new Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 120),
+                          Container(),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+              )
+            ],
+          )
         ],
       ),
     );
