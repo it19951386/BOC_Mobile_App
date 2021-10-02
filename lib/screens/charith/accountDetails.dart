@@ -181,6 +181,7 @@ class AccountDetails extends StatelessWidget {
                                       child: TabBarView(
                                         children: [
                                           ActivityTab(),
+                                          DetailsTab(),
                                         ],
                                       ),
                                     ),
