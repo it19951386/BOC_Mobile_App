@@ -35,7 +35,7 @@ class DashboardTab extends StatelessWidget {
                       children: [
                         dashboardCard(
                           title: "My Assets",
-                          amount: "LKR 10,435.00",
+                          amount: "LKR 26,750.45",
                           color: Colors.red,
                           nextScreen: SavingAccounts(),
                         ),
