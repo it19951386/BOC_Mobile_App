@@ -3,15 +3,6 @@ import 'widgets/widgets.dart';
 import 'palatte.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-void main() =>runApp(MaterialApp(
-  home: SplashScreen(),
-  debugShowCheckedModeBanner: false,
-  initialRoute: '/',
-  routes: {
-    'SendRegister': (context)=> Signup(),
-  },
-));
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
