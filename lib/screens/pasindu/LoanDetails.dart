@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'LoanCard.dart';
 
 class LoanDetails extends StatefulWidget {
-  const LoanDetails({Key? key}) : super(key: key);
-
+  LoanDetails({Key? key, required this.loanBalanceCard, required this.body})
+      : super(key: key);
+  LoanBalanceCard loanBalanceCard;
+  Body body;
   @override
   _LoanDetailsState createState() => _LoanDetailsState();
 }
@@ -29,7 +31,7 @@ class _LoanDetailsState extends State<LoanDetails> {
               ),
             ),
           ),
-          LoanBalanceCard(),
+          this.widget.loanBalanceCard,
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
@@ -100,7 +102,7 @@ class _LoanDetailsState extends State<LoanDetails> {
                         ),
                       ),
                     ),
-                    Body(),
+                    this.widget.body,
                   ],
                 ),
               ),
@@ -113,8 +115,8 @@ class _LoanDetailsState extends State<LoanDetails> {
 }
 
 class LoanBalanceCard extends StatelessWidget {
-  const LoanBalanceCard({Key? key}) : super(key: key);
-
+  LoanBalanceCard({Key? key, required this.balance}) : super(key: key);
+  String balance = "";
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData = MediaQuery.of(context);
@@ -152,7 +154,7 @@ class LoanBalanceCard extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(right: 12),
               child: Text(
-                'LKR 23,000.00 ',
+                balance,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -167,61 +169,73 @@ class LoanBalanceCard extends StatelessWidget {
 }
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
-
+  Body(
+      {Key? key, required this.account, required this.cID, required this.pName})
+      : super(key: key);
+  String account = "";
+  String cID = "";
+  String pName = "";
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(height: 64),
-        Text('Account Details0',
+        Text('Account Details',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
         Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Text('Áccount',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 12),
-                child: Text('085227453', style: TextStyle(fontSize: 18)),
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 50),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Text('Áccount',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Text(account, style: TextStyle(fontSize: 18)),
+                )
+              ],
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Text('Customer ID',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 12),
-                child: Text('0221547835', style: TextStyle(fontSize: 18)),
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Text('Customer ID',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Text(cID, style: TextStyle(fontSize: 18)),
+                )
+              ],
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12),
-                child: Text('Product Name',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 12),
-                child:
-                    Text('ABC Personal Loan', style: TextStyle(fontSize: 18)),
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Text('Product Name',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 12),
+                  child: Text(pName, style: TextStyle(fontSize: 18)),
+                )
+              ],
+            ),
           ),
         ])
       ],

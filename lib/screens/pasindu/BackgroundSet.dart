@@ -55,7 +55,14 @@ class BackgroundSet extends StatelessWidget {
                       title: '085227453 MALABE',
                       accnumber: 'Account No:- 085227453',
                       balance: 'Loan Outstanding :- LKR 24,548.00',
-                      nextScreen: LoanDetails(),
+                      nextScreen: LoanDetails(
+                        loanBalanceCard:
+                            LoanBalanceCard(balance: "LKR 23,000.00"),
+                        body: Body(
+                            account: "085227453",
+                            cID: "0221547835",
+                            pName: "ABC Personal Loan"),
+                      ),
                     ),
                   ),
                   SizedBox(height: 25),
@@ -64,7 +71,14 @@ class BackgroundSet extends StatelessWidget {
                       title: '087144256 MALABE',
                       accnumber: 'Account No:- 087144256',
                       balance: 'Loan Outstanding :- LKR 100,000.00',
-                      nextScreen: LoanDetails(),
+                      nextScreen: LoanDetails(
+                        loanBalanceCard:
+                            LoanBalanceCard(balance: "LKR 100,000.00"),
+                        body: Body(
+                            account: "087144256",
+                            cID: "0441547430",
+                            pName: "XYZ Student Loan"),
+                      ),
                     ),
                   )
                 ],

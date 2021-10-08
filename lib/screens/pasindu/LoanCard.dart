@@ -2,18 +2,18 @@ import 'package:boc_mobile_app/screens/pasindu/LoanDetails.dart';
 import 'package:flutter/material.dart';
 
 class LoanCard extends StatelessWidget {
-  const LoanCard(
-      {Key? key,
-      required this.title,
-      required this.accnumber,
-      required this.balance,
-      required this.nextScreen})
-      : super(key: key);
+  const LoanCard({
+    Key? key,
+    required this.title,
+    required this.accnumber,
+    required this.balance,
+    required this.nextScreen,
+  }) : super(key: key);
 
   final String title;
   final String accnumber;
   final String balance;
-  final Widget nextScreen;
+  final LoanDetails nextScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LoanCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LoanDetails()),
+          MaterialPageRoute(builder: (context) => nextScreen),
         );
       },
       child: Container(
