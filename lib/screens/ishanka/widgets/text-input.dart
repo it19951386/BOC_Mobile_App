@@ -28,10 +28,12 @@ class TextInput extends StatelessWidget {
           boxShadow: [BoxShadow(blurRadius: 5,color: Colors.grey,offset: Offset(0,4))]
       ),
       child: TextField(
+        style: TextStyle(color: Colors.black),
         decoration: InputDecoration(
             contentPadding: const EdgeInsets.symmetric(vertical: 14),
             border: InputBorder.none,
             hintText: hint,
+            enabled: false,
             prefixIcon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Icon(
@@ -40,7 +42,7 @@ class TextInput extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-            hintStyle: TBodyText
+            hintStyle: TBodyText2
         ),
         keyboardType: inputType,
         textInputAction: inputAction,

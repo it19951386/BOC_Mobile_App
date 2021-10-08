@@ -22,6 +22,13 @@ const TextStyle TBodyText = TextStyle(
     color: Colors.black26,
 
 );
+const TextStyle TBodyText2 = TextStyle(
+    fontSize: 16,
+    fontWeight:FontWeight.bold,
+    color: Colors.black,
+    fontFamily: 'Poppins'
+
+);
 //signIn
 const TextStyle SButtonText = TextStyle(
     fontSize: 18,
