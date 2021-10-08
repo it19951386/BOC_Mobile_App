@@ -17,7 +17,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  final _formkey = GlobalKey<FormState>();
+  
 
   var name = " ";
   var email = " ";
@@ -69,7 +69,7 @@ class _ProfileState extends State<Profile> {
                     children: [
                       Ink.image(
                         image: AssetImage(
-                          'assets/VisaCard.png',
+                          'assets/visacard.png',
                         ),
 
                         height: 223,
@@ -81,7 +81,7 @@ class _ProfileState extends State<Profile> {
                         right: 15,
                         left: 38,
                         child: Text(
-                          'Name',
+                          'Mr.Ishanka',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -150,12 +150,78 @@ class _ProfileState extends State<Profile> {
                                   child: TextInput(
                                     inputAction: TextInputAction.next ,
                                     inputType: TextInputType.text,
-                                    icon: FontAwesomeIcons.book,
-                                    hint: 'text',
+                                    icon: FontAwesomeIcons.user,
+                                    hint: 'Mr.Ishanka ',
 
 
                                   ),
                                 ),
+
+                                SizedBox(
+                                  height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 15),
+                                  child: TextInput(
+                                    inputAction: TextInputAction.next ,
+                                    inputType: TextInputType.text,
+                                    icon: FontAwesomeIcons.book,
+                                    hint: '200507000',
+
+
+                                  ),
+                                ),
+
+                                SizedBox(
+                                  height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 15),
+                                  child: TextInput(
+                                    inputAction: TextInputAction.next ,
+                                    inputType: TextInputType.text,
+                                    icon: FontAwesomeIcons.mailBulk,
+                                    hint: 'ishanka@gmail.com',
+
+
+                                  ),
+                                ),
+
+                                SizedBox(
+                                  height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 15),
+                                  child: TextInput(
+                                    inputAction: TextInputAction.next ,
+                                    inputType: TextInputType.text,
+                                    icon: FontAwesomeIcons.building,
+                                    hint: 'Malabe',
+
+
+                                  ),
+                                ),
+
+                                SizedBox(
+                                  height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 15),
+                                  child: TextInput(
+                                    inputAction: TextInputAction.next ,
+                                    inputType: TextInputType.text,
+                                    icon: FontAwesomeIcons.phoneAlt,
+                                    hint: '0765476204',
+
+
+                                  ),
+                                ),
+
+
 
 
 
