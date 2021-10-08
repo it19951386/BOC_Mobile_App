@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'widgets/widgets.dart';
@@ -56,6 +57,22 @@ class _SignupState extends State<Signup> {
         )
         );
 
+        CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+
+          // Call the user's CollectionReference to add a new user
+          return users
+              .add({
+            'name': name,
+            'email': email,
+            'phone Number': phoneNo,
+            'account Number': accountNo,
+            'password' : password
+          })
+              .then((value) => print("User Added"))
+              .catchError((error) => print("Failed to add user: $error"));
+
+
         Navigator.push(context, MaterialPageRoute(builder:(context) => Login() ));
 
       }on FirebaseAuthException catch (error){
@@ -105,6 +122,8 @@ class _SignupState extends State<Signup> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Stack(
       children: [
         BackgroundImage(),
@@ -493,6 +512,7 @@ class _SignupState extends State<Signup> {
                                   confirmPassword = confirmPasswordController.text;
                                 });
                                 registration();
+
                               }
 
                             } ,
