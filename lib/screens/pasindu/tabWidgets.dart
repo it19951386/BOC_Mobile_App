@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:boc_mobile_app/screens/pasindu/CustomAppBar.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboardCard.dart';
+import 'package:boc_mobile_app/screens/charith/Saving_Accounts.dart';
 
 class DashboardTab extends StatelessWidget {
   const DashboardTab({Key? key}) : super(key: key);
@@ -34,9 +35,9 @@ class DashboardTab extends StatelessWidget {
                       children: [
                         dashboardCard(
                           title: "My Assets",
-                          amount: "LKR 10,435.00",
+                          amount: "LKR 26,750.45",
                           color: Colors.red,
-                          nextScreen: example(),
+                          nextScreen: SavingAccounts(),
                         ),
                         SizedBox(height: 30),
                         dashboardCard(

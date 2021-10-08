@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "436512638937",
+    "project_id": "boc-app-a4de1",
+    "storage_bucket": "boc-app-a4de1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436512638937:android:3ce46f105180e5ec5f7bc8",
+        "android_client_info": {
+          "package_name": "com.example.boc_mobile_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436512638937-o2sipuh09miks1vd46crio574uf3prv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtr6eEN8GAC8EgQaQePbaO5vwv4rfssbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436512638937-o2sipuh09miks1vd46crio574uf3prv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
