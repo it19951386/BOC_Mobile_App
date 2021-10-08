@@ -1,8 +1,10 @@
 import 'package:boc_mobile_app/screens/charith/reminder.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanCard.dart';
+import 'package:boc_mobile_app/screens/pasindu/LoanDetails.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboardCard.dart';
 import 'package:flutter/material.dart';
 
+//
 class BackgroundSet extends StatelessWidget {
   const BackgroundSet({Key? key}) : super(key: key);
 
@@ -50,16 +52,34 @@ class BackgroundSet extends StatelessWidget {
                   SizedBox(height: 25),
                   Container(
                     child: LoanCard(
-                        title: '085227453 MALABE',
-                        accnumber: 'Account No:- 085227453',
-                        balance: 'Loan Outstanding :- LKR 24,548.00'),
+                      title: '085227453 MALABE',
+                      accnumber: 'Account No:- 085227453',
+                      balance: 'Loan Outstanding :- LKR 24,548.00',
+                      nextScreen: LoanDetails(
+                        loanBalanceCard:
+                            LoanBalanceCard(balance: "LKR 23,000.00"),
+                        body: Body(
+                            account: "085227453",
+                            cID: "0221547835",
+                            pName: "ABC Personal Loan"),
+                      ),
+                    ),
                   ),
                   SizedBox(height: 25),
                   Container(
                     child: LoanCard(
-                        title: '087144256 MALABE',
-                        accnumber: 'Account No:- 087144256',
-                        balance: 'Loan Outstanding :- LKR 100,000.00'),
+                      title: '087144256 MALABE',
+                      accnumber: 'Account No:- 087144256',
+                      balance: 'Loan Outstanding :- LKR 100,000.00',
+                      nextScreen: LoanDetails(
+                        loanBalanceCard:
+                            LoanBalanceCard(balance: "LKR 100,000.00"),
+                        body: Body(
+                            account: "087144256",
+                            cID: "0441547430",
+                            pName: "XYZ Student Loan"),
+                      ),
+                    ),
                   )
                 ],
               ),
