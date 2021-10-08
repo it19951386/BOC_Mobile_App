@@ -61,19 +61,17 @@ class _SignupState extends State<Signup> {
 
 
           // Call the user's CollectionReference to add a new user
-          return users
-              .add({
+          return users.add({
             'name': name,
             'email': email,
             'phone Number': phoneNo,
             'account Number': accountNo,
             'password' : password
-          })
-              .then((value) => print("User Added"))
-              .catchError((error) => print("Failed to add user: $error"));
+          }).then((value) => print("User Added"))
+              .catchError((error) => print("Failed to add user: $error")).then((value) =>  Navigator.push(context, MaterialPageRoute(builder:(context) => Login() )));
 
 
-        Navigator.push(context, MaterialPageRoute(builder:(context) => Login() ));
+
 
       }on FirebaseAuthException catch (error){
         if(error.code == 'weak-password'){
