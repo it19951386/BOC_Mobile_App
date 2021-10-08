@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../../main.dart';
 import '../../palatte.dart';
 import 'package:flutter/material.dart';
 import '../clickable-text.dart';
@@ -31,7 +32,7 @@ class _LoginState extends State<Login> {
   userLogin() async{
     try{
       await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Login()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyApp()));
     }on FirebaseAuthException catch(error){
       if(error.code == 'user-not-found'){
         print(' 🛑 No user found that email');
