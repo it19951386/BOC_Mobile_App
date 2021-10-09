@@ -1,6 +1,6 @@
-import 'package:first_project/screens/lakshika/addAccount.dart';
-import 'package:first_project/screens/lakshika/widgets/background-image.dart';
-import 'package:first_project/screens/lakshika/widgets/roundBtnthirdParty.dart';
+import 'package:boc_mobile_app/screens/lakshi/addAccount.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/background-image.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/roundBtnthirdParty.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
