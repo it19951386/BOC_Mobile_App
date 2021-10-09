@@ -515,7 +515,7 @@ class _SignupState extends State<Signup> {
 
                             } ,
                             child: Text(
-                                'Sign In',
+                                'Sign Up',
                                 style: SButtonText
                             ),
                           ),
