@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
 import '../../../../main.dart';
 import '../../palatte.dart';
 import 'package:flutter/material.dart';
 import '../clickable-text.dart';
 import '../widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../ishanka/widgets/ForgotPassword/forgotPassword.dart';
 
 // void main() => runApp(MaterialApp(
 //   home: Login(),
@@ -272,9 +272,12 @@ class _LoginState extends State<Login> {
                       //2
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 2,vertical: 20),
-                        child: Text(
-                          "Forget Password?",
-                          style: NText
+                        child: TextButton(
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ForgotPassword(),));
+                          },
+                          child: Text("Forgot Password?",
+                              style: NText),
                         ),
                       ),
 
