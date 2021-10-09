@@ -110,6 +110,8 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                             },
                             child: Text(
                               'Add',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
                             ),
                           ),
                         ),
@@ -135,6 +137,8 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                         child: Container(
                           height: 40,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                                width: 3.0, color: Colors.amberAccent),
                             borderRadius: BorderRadius.circular(12),
                             boxShadow: [
                               BoxShadow(
@@ -144,8 +148,8 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                             ],
                             gradient: LinearGradient(
                               colors: [
-                                Color.fromARGB(255, 253, 197, 12),
-                                Color.fromARGB(255, 255, 231, 107)
+                                Colors.white,
+                                Colors.white,
                               ],
                             ),
                           ),
@@ -156,7 +160,11 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                                 expenses = [];
                               });
                             },
-                            child: const Text('Reset'),
+                            child: const Text(
+                              'Reset',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
                           ),
                         ),
                       ),
@@ -192,7 +200,11 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                                         )),
                               );
                             },
-                            child: const Text('Calculate'),
+                            child: const Text(
+                              'Calculate',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
                           ),
                         ),
                       ),
@@ -249,7 +261,10 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                         'Food',
                         'Education',
                         'Entertainment',
-                        'Transport'
+                        'Transport',
+                        'Medicine',
+                        'Utility Bills',
+                        'Shopping',
                       ].map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -328,6 +343,8 @@ class _BudgetCalculatorState extends State<BudgetCalculator> {
                     },
                     child: Text(
                       'Add',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
                 ),
