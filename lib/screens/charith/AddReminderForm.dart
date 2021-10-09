@@ -373,7 +373,11 @@ class _AddReminderFormState extends State<AddReminderForm> {
                                     _isProcessing = true;
                                   });
 
-                                  //await Database.addReminder(subject: getSubject, description: getDescription, date: getDate, time: getTime);
+                                  await Database.addReminder(
+                                      subject: getSubject,
+                                      description: getDescription,
+                                      date: getDate,
+                                      time: getTime);
 
                                   setState(() {
                                     _isProcessing = false;
