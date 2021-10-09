@@ -294,6 +294,137 @@ class _AddReminderFormState extends State<AddReminderForm> {
                     ),
                   ),
                 ),
+                SizedBox(height: 50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    /****************************
+                            Clear Button
+                     ****************************/
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                  width: 3.0, color: Colors.amberAccent),
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    color: Colors.grey,
+                                    offset: Offset(0, 4))
+                              ]),
+                          child: FlatButton(
+                              onPressed: () {
+                                _formKey.currentState!.reset();
+                                _subjectController.clear();
+                                _descriptionController.clear();
+                                _dateController.clear();
+                                _timeController.clear();
+                              },
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(25, 5, 25, 5),
+                                child: Text(
+                                  'Clear',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Poppins-Medium',
+                                  ),
+                                ),
+                              ),
+                              color: Colors.white,
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(20.0),
+                              )),
+                        ),
+                      ],
+                    ),
+                    /****************************
+                            Save Button
+                     ****************************/
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.amber,
+                              border:
+                                  Border.all(width: 2.0, color: Colors.black12),
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 5,
+                                    color: Colors.grey,
+                                    offset: Offset(0, 4))
+                              ]),
+                          child: FlatButton(
+                              onPressed: () async {
+                                widget.subjectFocusNode.unfocus();
+                                widget.descriptionFocusNode.unfocus();
+                                widget.dateFocusNode.unfocus();
+                                widget.timeFocusNode.unfocus();
+
+                                if (_formKey.currentState!.validate()) {
+                                  setState(() {
+                                    _isProcessing = true;
+                                  });
+
+                                  //await Database.addReminder(subject: getSubject, description: getDescription, date: getDate, time: getTime);
+
+                                  setState(() {
+                                    _isProcessing = false;
+                                  });
+
+                                  _formKey.currentState!.reset();
+                                  _subjectController.clear();
+                                  _descriptionController.clear();
+                                  _dateController.clear();
+                                  _timeController.clear();
+                                }
+                              },
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(25, 5, 25, 5),
+                                child: Text(
+                                  'Save',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Poppins-Medium',
+                                  ),
+                                ),
+                              ),
+                              color: Colors.amber,
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(20.0),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 50),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _isProcessing
+                        ? Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                            ),
+                          )
+                        : Center(
+                            child: Text(''),
+                          ),
+                  ],
+                ),
               ],
             ),
           ),
