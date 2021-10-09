@@ -18,7 +18,9 @@ class AddReminderForm extends StatefulWidget {
 
   @override
   _AddReminderFormState createState() => _AddReminderFormState();
+}
 
+class _AddReminderFormState extends State<AddReminderForm> {
   final _formKey = GlobalKey<FormState>();
 
   bool _isProcessing = false;
@@ -27,11 +29,77 @@ class AddReminderForm extends StatefulWidget {
   final TextEditingController _descriptionController = TextEditingController();
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _timeController = TextEditingController();
-}
 
-class _AddReminderFormState extends State<AddReminderForm> {
+  //get form values
+  String getSubject = "";
+  String getDescription = "";
+  String getDate = "";
+  String getTime = "";
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          SizedBox(height: 40),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: Column(
+              children: [
+                /************************
+                        Title
+                 ************************/
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(width: 3.0, color: Colors.amberAccent),
+                      borderRadius: BorderRadius.circular(14),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 5,
+                            color: Colors.grey,
+                            offset: Offset(0, 4))
+                      ]),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                      border: InputBorder.none,
+                      hintText: 'Title',
+                      filled: true,
+                      errorStyle: TextStyle(
+                          color: Colors.deepOrange,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Poppins'),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(
+                          FontAwesomeIcons.fileSignature,
+                          size: 19,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      hintStyle: ApptextStyle.HINT_TEXT,
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.next,
+                    focusNode: widget.subjectFocusNode,
+                    controller: _subjectController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return '     Please Enter Title';
+                      }
+                      getSubject = value;
+                      return null;
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
