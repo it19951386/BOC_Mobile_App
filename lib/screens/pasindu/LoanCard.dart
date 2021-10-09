@@ -1,7 +1,8 @@
 import 'package:boc_mobile_app/screens/pasindu/LoanDetails.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class LoanCard extends StatelessWidget {
+class LoanCard extends StatefulWidget {
   const LoanCard({
     Key? key,
     required this.title,
@@ -16,14 +17,18 @@ class LoanCard extends StatelessWidget {
   final LoanDetails nextScreen;
 
   @override
+  _LoanCardState createState() => _LoanCardState();
+}
+
+class _LoanCardState extends State<LoanCard> {
+  @override
   Widget build(BuildContext context) {
     MediaQueryData queryData = MediaQuery.of(context);
-
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => nextScreen),
+          MaterialPageRoute(builder: (context) => widget.nextScreen),
         );
       },
       child: Container(
@@ -48,30 +53,30 @@ class LoanCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                child: Text(
-                  title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Container(
+                  child: Text(
+                    widget.title,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
               Container(
                 child: Text(
-                  accnumber,
+                  widget.accnumber,
                   style: TextStyle(fontSize: 16),
                 ),
               ),
-              Container(
-                child: Text(
-                  balance,
-                  style: TextStyle(fontSize: 16),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Container(
+                  child: Text(
+                    widget.balance,
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              )
             ],
           ),
         ),
