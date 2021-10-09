@@ -95,6 +95,55 @@ class _AddReminderFormState extends State<AddReminderForm> {
                     },
                   ),
                 ),
+                SizedBox(height: 10),
+                /************************
+                      Description
+                 ************************/
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(width: 3.0, color: Colors.amberAccent),
+                      borderRadius: BorderRadius.circular(14),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 5,
+                            color: Colors.grey,
+                            offset: Offset(0, 4))
+                      ]),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                      border: InputBorder.none,
+                      hintText: 'Description',
+                      filled: true,
+                      errorStyle: TextStyle(
+                          color: Colors.deepOrange,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'Poppins'),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(
+                          FontAwesomeIcons.listAlt,
+                          size: 18,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      hintStyle: ApptextStyle.HINT_TEXT,
+                    ),
+                    keyboardType: TextInputType.multiline,
+                    textInputAction: TextInputAction.next,
+                    controller: _descriptionController,
+                    maxLines: 2,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "     Please Enter Description";
+                      }
+                      getDescription = value;
+                      return null;
+                    },
+                  ),
+                ),
               ],
             ),
           ),
