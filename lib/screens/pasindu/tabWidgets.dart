@@ -1,3 +1,4 @@
+import 'package:boc_mobile_app/screens/lakshi/thirdPartyTransfers.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboardTile.dart';
 import 'package:boc_mobile_app/screens/pasindu/example.dart';
@@ -55,9 +56,19 @@ class DashboardTab extends StatelessWidget {
                     child: Column(children: [
                       Expanded(
                         child: Row(children: [
-                          dashboardTile(
-                            icon: Icon(FontAwesomeIcons.userFriends),
-                            title: "Accounts",
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ThirdPartyTransfers()),
+                              );
+                            },
+                            child: dashboardTile(
+                              icon: Icon(FontAwesomeIcons.userFriends),
+                              title: "Accounts",
+                            ),
                           ),
                           dashboardTile(
                               icon: Icon(FontAwesomeIcons.cashRegister),

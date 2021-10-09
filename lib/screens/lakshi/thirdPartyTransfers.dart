@@ -1,4 +1,5 @@
 import 'package:boc_mobile_app/screens/ishanka/widgets/background-image.dart';
+import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -15,13 +16,9 @@ class ThirdPartyTransfers extends StatelessWidget {
       children: [
         BackgroundImage(),
         Scaffold(
+          appBar: CustomAppBar(
+              appBarTitle: "Add Utility Biller", showBackButton: true),
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            title: Text('Ninja ID Card'),
-            centerTitle: true,
-            backgroundColor: Colors.grey[850],
-            elevation: 0.0,
-          ),
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),

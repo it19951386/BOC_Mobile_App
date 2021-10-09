@@ -1,4 +1,6 @@
 import 'package:boc_mobile_app/screens/ishanka/widgets/background-image.dart';
+import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
+import 'package:boc_mobile_app/screens/pasindu/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +31,8 @@ class _AddUtility02State extends State<AddUtility02> {
       children: [
         BackgroundImage(),
         Scaffold(
-          backgroundColor: Colors.transparent,
+          appBar: CustomAppBar(
+              appBarTitle: "Add Utility Biller", showBackButton: true),
           body: Container(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -211,7 +214,13 @@ class ClearButton extends StatelessWidget {
                     blurRadius: 5, color: Colors.grey, offset: Offset(0, 4))
               ]),
           child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Dashboard(),
+                    ));
+              },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
                 child: Text(

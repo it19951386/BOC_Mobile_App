@@ -1,8 +1,11 @@
 import 'package:boc_mobile_app/screens/ishanka/widgets/background-image.dart';
+import 'package:boc_mobile_app/screens/lakshi/thirdPartyTransfers.dart';
 import 'package:boc_mobile_app/screens/lakshi/widget/accNo.dart';
 import 'package:boc_mobile_app/screens/lakshi/widget/ben-name.dart';
 import 'package:boc_mobile_app/screens/lakshi/widget/email.dart';
 import 'package:boc_mobile_app/screens/lakshi/widget/nickname.dart';
+import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
+import 'package:boc_mobile_app/screens/pasindu/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,11 +22,9 @@ class AddAccount extends StatelessWidget {
     return Stack(children: [
       BackgroundImage(),
       Scaffold(
-        appBar: AppBar(
-          title: Text('Third Party Account Beneficiaries'),
-          backgroundColor: Colors.amber,
-        ),
-        backgroundColor: Colors.transparent,
+        appBar: CustomAppBar(
+            appBarTitle: "Third Party Account Beneficiaries",
+            showBackButton: true),
         body: Container(
           padding: EdgeInsets.symmetric(
             vertical: 50.0,
@@ -111,7 +112,13 @@ class SubmitButton extends StatelessWidget {
                     blurRadius: 5, color: Colors.grey, offset: Offset(0, 4))
               ]),
           child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Dashboard(),
+                    ));
+              },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
                 child: Text(
@@ -151,7 +158,13 @@ class CancelButton extends StatelessWidget {
                     blurRadius: 5, color: Colors.grey, offset: Offset(0, 4))
               ]),
           child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ThirdPartyTransfers(),
+                    ));
+              },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
                 child: Text(
