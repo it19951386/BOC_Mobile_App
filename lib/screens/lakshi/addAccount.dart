@@ -1,14 +1,12 @@
-import 'package:first_project/screens/lakshika/thirdPartyTransfers.dart';
-import 'package:first_project/screens/lakshika/widgets/accNo.dart';
-import 'package:first_project/screens/lakshika/widgets/background-image.dart';
-import 'package:first_project/screens/lakshika/widgets/ben-name.dart';
-import 'package:first_project/screens/lakshika/widgets/email.dart';
-import 'package:first_project/screens/lakshika/widgets/nickname.dart';
-import 'package:first_project/screens/lakshika/widgets/roundBtn.dart';
+import 'package:boc_mobile_app/screens/lakshi/thirdPartyTransfers.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/accNo.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/background-image.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/ben-name.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/email.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/nickname.dart';
+import 'package:boc_mobile_app/screens/lakshi/widget/roundBtn.dart';
 import 'package:flutter/material.dart';
-//import 'package:first_project/main.dart';
 import 'package:flutter/services.dart';
-//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddAccount extends StatelessWidget {
   const AddAccount({Key? key}) : super(key: key);
