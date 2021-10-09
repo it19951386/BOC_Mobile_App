@@ -1,5 +1,6 @@
 import 'package:boc_mobile_app/screens/ishanka/Profile.dart';
 import 'package:boc_mobile_app/screens/lakshi/addutilityBiller2btns.dart';
+import 'package:boc_mobile_app/screens/pasindu/BudgetCalculator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -163,6 +164,12 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 2:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => AddUtility02(),
+       ));
+        break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => BudgetCalculator(),
+
         ));
         break;
     }

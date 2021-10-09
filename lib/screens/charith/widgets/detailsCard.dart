@@ -69,7 +69,7 @@ class DetailsCard extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        '196874574 | Galle',
+                        '1968745 | Galle',
                         style: ApptextStyle.CARD_SUB_TITLE,
                       ),
                       SizedBox(height: 10),
