@@ -48,6 +48,7 @@ class Card extends StatefulWidget {
   Card({Key? key, required this.income, required this.tExpenses})
       : super(key: key);
   double income, tExpenses;
+  Color clr = Colors.green;
   @override
   _CardState createState() => _CardState();
 }
@@ -55,6 +56,7 @@ class Card extends StatefulWidget {
 class _CardState extends State<Card> {
   @override
   Widget build(BuildContext context) {
+    widget.income - widget.tExpenses < 0 ? widget.clr = Colors.red : null;
     return Container(
       padding: EdgeInsets.only(left: 22, right: 22),
       height: 75,
@@ -92,6 +94,17 @@ class _CardState extends State<Card> {
                 "LKR " + widget.tExpenses.toString() + "0",
                 style:
                     TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Balance', style: TextStyle(fontWeight: FontWeight.bold)),
+              Text(
+                "LKR " + (widget.income - widget.tExpenses).toString() + "0",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: widget.clr),
               ),
             ],
           ),
