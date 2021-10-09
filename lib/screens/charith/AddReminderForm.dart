@@ -18,6 +18,15 @@ class AddReminderForm extends StatefulWidget {
 
   @override
   _AddReminderFormState createState() => _AddReminderFormState();
+
+  final _formKey = GlobalKey<FormState>();
+
+  bool _isProcessing = false;
+
+  final TextEditingController _subjectController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _dateController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
 }
 
 class _AddReminderFormState extends State<AddReminderForm> {
