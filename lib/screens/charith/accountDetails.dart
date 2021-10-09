@@ -9,7 +9,7 @@ class AccountDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          CustomAppBar(appBarTitle: "1968745742 | Galle", showBackButton: true),
+          CustomAppBar(appBarTitle: "1968745 | Galle", showBackButton: true),
       body: Stack(
         children: [
           new Container(
@@ -36,7 +36,7 @@ class AccountDetails extends StatelessWidget {
                         children: <Widget>[
                           SizedBox(height: 60),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 50),
+                            padding: const EdgeInsets.symmetric(horizontal: 40),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
