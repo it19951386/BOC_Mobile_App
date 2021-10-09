@@ -61,19 +61,17 @@ class _SignupState extends State<Signup> {
 
 
           // Call the user's CollectionReference to add a new user
-          return users
-              .add({
+          return users.add({
             'name': name,
             'email': email,
             'phone Number': phoneNo,
             'account Number': accountNo,
             'password' : password
-          })
-              .then((value) => print("User Added"))
-              .catchError((error) => print("Failed to add user: $error"));
+          }).then((value) => print("User Added"))
+              .catchError((error) => print("Failed to add user: $error")).then((value) =>  Navigator.push(context, MaterialPageRoute(builder:(context) => Login() )));
 
 
-        Navigator.push(context, MaterialPageRoute(builder:(context) => Login() ));
+
 
       }on FirebaseAuthException catch (error){
         if(error.code == 'weak-password'){
@@ -92,24 +90,25 @@ class _SignupState extends State<Signup> {
         }
         else if(error.code == 'email-already-in-use'){
           print('Account is already exists ');
-        }
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          backgroundColor: Colors.redAccent,
-          content: Text('Account is already exists ',
-            style:TextStyle(
-              fontSize: 20.0,
-              color: Colors.amber,
-            ) ,
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.redAccent,
+            content: Text('Account is already exists ',
+              style:TextStyle(
+                fontSize: 20.0,
+                color: Colors.amber,
+              ) ,
+            ),
           ),
-        ),
-        );
+          );
+        }
+
       }
     }
     else {
-      print('password and confirm Password does not match');
+      print('Password and confirm password does not match');
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         backgroundColor: Colors.redAccent,
-        content: Text('password and confirm Password does not match',
+        content: Text('Password and confirm password does not match',
           style:TextStyle(
             fontSize: 20.0,
             color: Colors.amber,
@@ -517,7 +516,7 @@ class _SignupState extends State<Signup> {
 
                             } ,
                             child: Text(
-                                'Sign In',
+                                'Sign Up',
                                 style: SButtonText
                             ),
                           ),
