@@ -6,13 +6,23 @@ import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AddReminder extends StatefulWidget {
-  const AddReminder({Key? key}) : super(key: key);
+  final FocusNode _subjectFocusNode = FocusNode();
+  final FocusNode _descriptionFocusNode = FocusNode();
+  final FocusNode _dateFocusNode = FocusNode();
+  final FocusNode _timeFocusNode = FocusNode();
 
   @override
   _AddReminderState createState() => _AddReminderState();
 }
 
 class _AddReminderState extends State<AddReminder> {
+  final _formkey = GlobalKey<FormState>();
+
+  final FocusNode _subject = FocusNode();
+  final FocusNode _description = FocusNode();
+  final FocusNode _date = FocusNode();
+  final FocusNode _time = FocusNode();
+
   TextEditingController dateinput = TextEditingController();
   //create Datepicker object called dateinput
 
