@@ -1,11 +1,28 @@
+import 'package:boc_mobile_app/screens/pasindu/CalculatorResult.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class BudgetCalculator extends StatelessWidget {
-  const BudgetCalculator({Key? key}) : super(key: key);
+class BudgetCalculator extends StatefulWidget {
+  BudgetCalculator({Key? key}) : super(key: key);
+
+  @override
+  _BudgetCalculatorState createState() => _BudgetCalculatorState();
+}
+
+class _BudgetCalculatorState extends State<BudgetCalculator> {
+  late List<ExpenseItem> expenses = [];
+
+  TextEditingController amountController = new TextEditingController();
+  TextEditingController incomeController = new TextEditingController();
+  late double tExpenses = 0.00;
+  String category = 'Food';
+
+  Map<String, double> dataMap = {};
 
   @override
   Widget build(BuildContext context) {
+    print(expenses);
     return Scaffold(
       appBar: CustomAppBar(
         appBarTitle: 'Budget Calculator',
@@ -21,252 +38,351 @@ class BudgetCalculator extends StatelessWidget {
               ),
             ),
           ),
-          BudgetCalculatorBody(),
-        ],
-      ),
-    );
-  }
-}
-
-class BudgetCalculatorBody extends StatelessWidget {
-  const BudgetCalculatorBody({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var items;
-    return Padding(
-      padding: const EdgeInsets.only(left: 23, right: 23),
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Total Income',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-            ),
-          ),
-          TextField(
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: '0.00',
-                filled: true,
-                fillColor: Colors.white),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Expenses',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-              ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(4),
-                child: Stack(
-                  children: <Widget>[
-                    Positioned.fill(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: <Color>[
-                              Color(0xFF0D47A1),
-                              Color(0xFF1976D2),
-                              Color(0xFF42A5F5),
+          Padding(
+            padding: const EdgeInsets.only(left: 23, right: 23, top: 51),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Total Income',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                ),
+                SizedBox(height: 26),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(width: 3.0, color: Colors.amberAccent),
+                      borderRadius: BorderRadius.circular(14),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 5,
+                            color: Colors.grey,
+                            offset: Offset(0, 4))
+                      ]),
+                  child: TextFormField(
+                    keyboardType:
+                        TextInputType.numberWithOptions(decimal: true),
+                    inputFormatters: [
+                      FilteringTextInputFormatter.deny(new RegExp('[\\-|\\ ]'))
+                    ],
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: '0.00',
+                      filled: true,
+                    ),
+                    controller: incomeController,
+                  ),
+                ),
+                SizedBox(height: 26),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Expenses',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                          width: 98,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 5,
+                                  color: Colors.grey,
+                                  offset: Offset(0, 4))
                             ],
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 253, 197, 12),
+                                Color.fromARGB(255, 255, 231, 107)
+                              ],
+                            ),
+                          ),
+                          child: FlatButton(
+                            onPressed: () {
+                              _showDialog(context);
+                            },
+                            child: Text(
+                              'Add',
+                            ),
                           ),
                         ),
-                      ),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        padding: const EdgeInsets.all(16.0),
-                        primary: Colors.white,
-                        textStyle: const TextStyle(fontSize: 18),
-                      ),
-                      onPressed: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) =>
-                                showPopUpForm(context));
-                      },
-                      child: const Text('Add'),
-                    ),
+                      ],
+                    )
                   ],
                 ),
-              )
-            ],
-          ),
-          ExpensesList(),
-          Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 8),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: Stack(
-                      children: <Widget>[
-                        Positioned.fill(
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: <Color>[
-                                  Color(0xFF0D47A1),
-                                  Color(0xFF1976D2),
-                                  Color(0xFF42A5F5),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            padding: const EdgeInsets.all(16.0),
-                            primary: Colors.white,
-                            textStyle: const TextStyle(fontSize: 18),
-                          ),
-                          onPressed: () {},
-                          child: const Text('Reset'),
-                        ),
-                      ],
-                    ),
-                  ),
+                SizedBox(height: 15),
+                Expanded(
+                  child: ListView.builder(
+                      itemCount: expenses.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return expenses[index];
+                      }),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: Stack(
-                      children: <Widget>[
-                        Positioned.fill(
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: <Color>[
-                                  Color(0xFF0D47A1),
-                                  Color(0xFF1976D2),
-                                  Color(0xFF42A5F5),
-                                ],
-                              ),
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 5,
+                                  color: Colors.grey,
+                                  offset: Offset(0, 4))
+                            ],
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 253, 197, 12),
+                                Color.fromARGB(255, 255, 231, 107)
+                              ],
                             ),
                           ),
-                        ),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            padding: const EdgeInsets.all(16.0),
-                            primary: Colors.white,
-                            textStyle: const TextStyle(fontSize: 18),
+                          child: FlatButton(
+                            onPressed: () {
+                              setState(() {
+                                incomeController.text = "";
+                                expenses = [];
+                              });
+                            },
+                            child: const Text('Reset'),
                           ),
-                          onPressed: () {},
-                          child: const Text('Calculate'),
                         ),
-                      ],
-                    ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 5,
+                                  color: Colors.grey,
+                                  offset: Offset(0, 4))
+                            ],
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(255, 253, 197, 12),
+                                Color.fromARGB(255, 255, 231, 107)
+                              ],
+                            ),
+                          ),
+                          child: FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CalculatorResult(
+                                          dataMap: dataMap,
+                                          tExpenses: tExpenses,
+                                          income: double.parse(
+                                              incomeController.text),
+                                        )),
+                              );
+                            },
+                            child: const Text('Calculate'),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
+                )
               ],
             ),
-          )
+          ),
         ],
       ),
     );
   }
-}
 
-Widget showPopUpForm(BuildContext context) {
-  return new AlertDialog(
-    title: const Text('Popup example'),
-    content: new Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        DropDownList(),
-        TextField(
-          decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: '0.00',
-              filled: true,
-              fillColor: Colors.white),
-        ),
-      ],
-    ),
-    actions: <Widget>[
-      new FlatButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        textColor: Theme.of(context).primaryColor,
-        child: const Text('Close'),
-      ),
-    ],
-  );
-}
+  void _showDialog(context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Container(
+              child: new Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(height: 30),
+                  Text("Category"),
+                  SizedBox(height: 21),
+                  Container(
+                    padding: const EdgeInsets.only(left: 12, right: 12),
+                    width: (MediaQuery.of(context).size.width),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border:
+                            Border.all(width: 3.0, color: Colors.amberAccent),
+                        borderRadius: BorderRadius.circular(14),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey,
+                              offset: Offset(0, 4))
+                        ]),
+                    child: DropdownButtonFormField<String>(
+                      value: category,
+                      icon: const Icon(Icons.arrow_downward),
+                      iconSize: 24,
+                      elevation: 16,
+                      style: const TextStyle(color: Colors.black),
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          category = newValue!;
+                        });
+                      },
+                      items: <String>[
+                        'Food',
+                        'Education',
+                        'Entertainment',
+                        'Transport'
+                      ].map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                  SizedBox(height: 28),
+                  Text("Amount"),
+                  SizedBox(height: 21),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border:
+                            Border.all(width: 3.0, color: Colors.amberAccent),
+                        borderRadius: BorderRadius.circular(14),
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey,
+                              offset: Offset(0, 4))
+                        ]),
+                    child: TextField(
+                      keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
+                      inputFormatters: [
+                        FilteringTextInputFormatter.deny(
+                            new RegExp('[\\-|\\ ]'))
+                      ],
+                      controller: amountController,
+                      decoration: const InputDecoration(
+                          hintText: '0.00',
+                          filled: true,
+                          fillColor: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            actions: <Widget>[
+              Center(
+                child: Container(
+                  width: 98,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 5,
+                          color: Colors.grey,
+                          offset: Offset(0, 4))
+                    ],
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromARGB(255, 253, 197, 12),
+                        Color.fromARGB(255, 255, 231, 107)
+                      ],
+                    ),
+                  ),
+                  child: FlatButton(
+                    onPressed: () {
+                      setState(() {
+                        tExpenses =
+                            tExpenses + double.parse(amountController.text);
+                        dataMap[category] = double.parse(amountController.text);
+                        expenses.add(ExpenseItem(
+                            categoryName: category,
+                            amount: double.parse(amountController.text)));
+                        category = "Food";
+                        amountController.text = "";
+                        print(dataMap);
+                      });
 
-class ExpensesList extends StatefulWidget {
-  const ExpensesList({Key? key}) : super(key: key);
-
-  @override
-  _ExpensesListState createState() => _ExpensesListState();
-}
-
-class _ExpensesListState extends State<ExpensesList> {
-  final List<double> expenses = [
-    150.00,
-    5751.00,
-    2500.00,
-    5751.00,
-    2500.00,
-    5751.00,
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: expenses.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              child: Text(expenses[index].toString()),
-            );
-          }),
-    );
+                      Navigator.pop(context);
+                    },
+                    child: Text(
+                      'Add',
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20)
+            ],
+          );
+        });
   }
 }
 
-class DropDownList extends StatefulWidget {
-  const DropDownList({Key? key}) : super(key: key);
+class ExpenseItem extends StatefulWidget {
+  ExpenseItem({Key? key, required this.categoryName, required this.amount})
+      : super(key: key);
+  String categoryName;
+  double amount;
 
   @override
-  _DropDownListState createState() => _DropDownListState();
+  _ExpenseItemState createState() => _ExpenseItemState();
 }
 
-class _DropDownListState extends State<DropDownList> {
-  String dropdownValue = 'One';
-
+class _ExpenseItemState extends State<ExpenseItem> {
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: dropdownValue,
-      icon: const Icon(Icons.arrow_downward),
-      iconSize: 24,
-      elevation: 16,
-      style: const TextStyle(color: Colors.deepPurple),
-      // underline: Container(
-      //   height: 2,
-      //   color: Colors.deepPurpleAccent,
-      // ),
-      onChanged: (String? newValue) {
-        setState(() {
-          dropdownValue = newValue!;
-        });
-      },
-      items: <String>['One', 'Two', 'Free', 'Four']
-          .map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15, left: 1, right: 1),
+      child: Container(
+        padding: EdgeInsets.only(left: 22, right: 22),
+        height: 75,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 0,
+              blurRadius: 4,
+              offset: Offset(0, 4), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              widget.categoryName,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "LKR " + widget.amount.toString() + "0",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
