@@ -78,18 +78,20 @@ class _DashboardTabState extends State<DashboardTab> {
                     child: Column(children: [
                       Expanded(
                         child: Row(children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ThirdPartyTransfers()),
-                              );
-                            },
-                            child: dashboardTile(
-                              icon: Icon(FontAwesomeIcons.userFriends),
-                              title: "Accounts",
+                          Expanded(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ThirdPartyTransfers()),
+                                );
+                              },
+                              child: dashboardTile(
+                                icon: Icon(FontAwesomeIcons.userFriends),
+                                title: "Accounts",
+                              ),
                             ),
                           ),
                           dashboardTile(
