@@ -17,7 +17,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  
+
 
   var name = " ";
   var email = " ";
@@ -142,10 +142,22 @@ class _ProfileState extends State<Profile> {
                             ),
                             height: 700.0,
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 SizedBox(height: 40),
 
                                 Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                                  child: Text('Name :',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+
                                   padding: EdgeInsets.symmetric(horizontal: 15),
                                   child: TextInput(
                                     inputAction: TextInputAction.next ,
@@ -159,6 +171,16 @@ class _ProfileState extends State<Profile> {
 
                                 SizedBox(
                                   height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                                  child: Text('Account Number :',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
                                 ),
 
                                 Padding(
@@ -178,12 +200,22 @@ class _ProfileState extends State<Profile> {
                                 ),
 
                                 Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                                  child: Text('Email:',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                ),
+
+                                Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 15),
                                   child: TextInput(
                                     inputAction: TextInputAction.next ,
                                     inputType: TextInputType.text,
                                     icon: FontAwesomeIcons.mailBulk,
-                                    hint: 'ishanka@gmail.com',
+                                    hint: 'ishanka44@gmail.com',
 
 
                                   ),
@@ -191,6 +223,16 @@ class _ProfileState extends State<Profile> {
 
                                 SizedBox(
                                   height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                                  child: Text('Branch :',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
                                 ),
 
                                 Padding(
@@ -207,6 +249,16 @@ class _ProfileState extends State<Profile> {
 
                                 SizedBox(
                                   height: 15,
+                                ),
+
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                                  child: Text('Phone Number :',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
                                 ),
 
                                 Padding(
