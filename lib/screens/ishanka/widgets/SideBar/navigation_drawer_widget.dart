@@ -1,7 +1,7 @@
 import 'package:boc_mobile_app/screens/ishanka/Profile.dart';
+import 'package:boc_mobile_app/screens/pasindu/BudgetCalculator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -33,7 +33,6 @@ class NavigationDrawerWidget extends StatelessWidget {
               title: title,
               title2: title2,
               onClicked: () {},
-
             ),
             Container(
               padding: padding,
@@ -44,7 +43,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                   const SizedBox(height: 24),
                   buildMenuItem(
                     text: 'Profile',
-                    icon:  FontAwesomeIcons.user,
+                    icon: FontAwesomeIcons.user,
                     onClicked: () => selectedItem(context, 0),
                   ),
                   const SizedBox(height: 16),
@@ -67,8 +66,6 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
                   const SizedBox(height: 24),
-
-
                 ],
               ),
             ),
@@ -107,7 +104,6 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
               Spacer(),
-
             ],
           ),
         ),
@@ -147,26 +143,28 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return ListTile(
       leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(color: color,fontFamily: 'Poppins',)),
+      title: Text(text,
+          style: TextStyle(
+            color: color,
+            fontFamily: 'Poppins',
+          )),
       hoverColor: hoverColor,
       onTap: onClicked,
     );
   }
 
   void selectedItem(BuildContext context, int index) {
-
-
     switch (index) {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => Profile(),
         ));
         break;
-      // case 1:
-      //   Navigator.of(context).push(MaterialPageRoute(
-      //     builder: (context) => FavouritesPage(),
-      //   ));
-      //   break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => BudgetCalculator(),
+        ));
+        break;
     }
   }
 }

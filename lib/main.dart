@@ -1,4 +1,7 @@
 import 'package:boc_mobile_app/screens/charith/reminder.dart';
+import 'package:boc_mobile_app/screens/pasindu/BudgetCalculator.dart';
+import 'package:boc_mobile_app/screens/pasindu/CalculatorResult.dart';
+import 'package:boc_mobile_app/screens/pasindu/LoanDetails.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanList.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboard.dart';
 import 'package:flutter/material.dart';

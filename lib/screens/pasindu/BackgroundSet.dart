@@ -2,12 +2,18 @@ import 'package:boc_mobile_app/screens/charith/reminder.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanCard.dart';
 import 'package:boc_mobile_app/screens/pasindu/LoanDetails.dart';
 import 'package:boc_mobile_app/screens/pasindu/dashboardCard.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 //
-class BackgroundSet extends StatelessWidget {
-  const BackgroundSet({Key? key}) : super(key: key);
+class BackgroundSet extends StatefulWidget {
+  BackgroundSet({Key? key}) : super(key: key);
 
+  @override
+  _BackgroundSetState createState() => _BackgroundSetState();
+}
+
+class _BackgroundSetState extends State<BackgroundSet> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -47,41 +53,47 @@ class BackgroundSet extends StatelessWidget {
                     ),
                   ]),
               alignment: Alignment.center,
-              child: Column(
-                children: [
-                  SizedBox(height: 25),
-                  Container(
-                    child: LoanCard(
-                      title: '085227453 MALABE',
-                      accnumber: 'Account No:- 085227453',
-                      balance: 'Loan Outstanding :- LKR 24,548.00',
-                      nextScreen: LoanDetails(
-                        loanBalanceCard:
-                            LoanBalanceCard(balance: "LKR 23,000.00"),
-                        body: Body(
-                            account: "085227453",
-                            cID: "0221547835",
-                            pName: "ABC Personal Loan"),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25),
+                      child: Container(
+                        child: LoanCard(
+                          title: '085227453 MALABE',
+                          accnumber: 'Account No:- 085227453',
+                          balance: 'Loan Outstanding :- LKR 24,548.00',
+                          nextScreen: LoanDetails(
+                            loanBalanceCard:
+                                LoanBalanceCard(balance: "LKR 23,000.00"),
+                            body: Body(
+                                account: "085227453",
+                                cID: "0221547835",
+                                pName: "ABC Personal Loan"),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 25),
-                  Container(
-                    child: LoanCard(
-                      title: '087144256 MALABE',
-                      accnumber: 'Account No:- 087144256',
-                      balance: 'Loan Outstanding :- LKR 100,000.00',
-                      nextScreen: LoanDetails(
-                        loanBalanceCard:
-                            LoanBalanceCard(balance: "LKR 100,000.00"),
-                        body: Body(
-                            account: "087144256",
-                            cID: "0441547430",
-                            pName: "XYZ Student Loan"),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25),
+                      child: Container(
+                        child: LoanCard(
+                          title: '087144256 MALABE',
+                          accnumber: 'Account No:- 087144256',
+                          balance: 'Loan Outstanding :- LKR 100,000.00',
+                          nextScreen: LoanDetails(
+                            loanBalanceCard:
+                                LoanBalanceCard(balance: "LKR 100,000.00"),
+                            body: Body(
+                                account: "087144256",
+                                cID: "0441547430",
+                                pName: "XYZ Student Loan"),
+                          ),
+                        ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],
