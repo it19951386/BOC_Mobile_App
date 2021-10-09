@@ -11,8 +11,8 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 50,
+      width: 120,
+      height: 40,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
@@ -37,7 +37,7 @@ class RoundedButton extends StatelessWidget {
           },
           child: Text(buttonText,
               style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Poppins')),
         ),
