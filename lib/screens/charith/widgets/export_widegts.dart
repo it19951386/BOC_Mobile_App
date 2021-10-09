@@ -30,3 +30,4 @@ export 'detailsCard.dart';
 
 //add Account
 export '../addAccount.dart';
+export '../data/Reminder_Collection.dart';
