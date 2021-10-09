@@ -1,4 +1,5 @@
 import 'package:boc_mobile_app/screens/ishanka/widgets/background-image.dart';
+import 'package:boc_mobile_app/screens/lakshi/addAccount.dart';
 import 'package:boc_mobile_app/screens/pasindu/customAppBar.dart';
 import 'package:flutter/material.dart';
 
@@ -79,7 +80,13 @@ class BoxButton extends StatelessWidget {
         ),
       ),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddAccount(),
+              ));
+        },
         child: Text(buttonText,
             style: TextStyle(
                 fontSize: 14,
