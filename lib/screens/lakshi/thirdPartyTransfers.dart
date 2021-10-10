@@ -18,7 +18,7 @@ class ThirdPartyTransfers extends StatelessWidget {
         BackgroundImage(),
         Scaffold(
           appBar: CustomAppBar(
-              appBarTitle: "Add Utility Biller", showBackButton: true),
+              appBarTitle: "Third Party Transfers", showBackButton: true),
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Padding(

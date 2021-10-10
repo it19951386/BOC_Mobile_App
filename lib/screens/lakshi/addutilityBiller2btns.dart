@@ -43,7 +43,7 @@ class _AddUtility02State extends State<AddUtility02> {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 35, horizontal: 17),
+                        vertical: 35, horizontal: 12),
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -57,7 +57,7 @@ class _AddUtility02State extends State<AddUtility02> {
                                 offset: Offset(0, 4))
                           ]),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 90),
+                        padding: const EdgeInsets.symmetric(horizontal: 60),
                         child: DropdownButton<String>(
                           value: value,
                           items: items.map((String buildMenuItem) {
@@ -98,7 +98,7 @@ class _AddUtility02State extends State<AddUtility02> {
                                 offset: Offset(0, 4))
                           ]),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 90),
+                        padding: const EdgeInsets.symmetric(horizontal: 80),
                         child: DropdownButton<String>(
                           value: value2,
                           items: items2.map((String buildMenuItem) {
@@ -128,13 +128,13 @@ class _AddUtility02State extends State<AddUtility02> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 80),
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         ClearButton(),
                         SizedBox(
-                          width: 100,
+                          width: 80,
                         ),
                         SaveButton(),
                       ],

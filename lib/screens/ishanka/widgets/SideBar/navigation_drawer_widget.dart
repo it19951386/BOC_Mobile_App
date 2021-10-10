@@ -1,5 +1,6 @@
 import 'package:boc_mobile_app/screens/ishanka/Profile.dart';
 import 'package:boc_mobile_app/screens/lakshi/addutilityBiller2btns.dart';
+import 'package:boc_mobile_app/screens/lakshi/thirdPartyTransfers.dart';
 import 'package:boc_mobile_app/screens/pasindu/BudgetCalculator.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -49,7 +50,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'View Utility Bill',
+                    text: 'Third Party Transfers',
                     icon: Icons.web_rounded,
                     onClicked: () => selectedItem(context, 1),
                   ),
@@ -159,6 +160,11 @@ class NavigationDrawerWidget extends StatelessWidget {
       case 0:
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => Profile(),
+        ));
+        break;
+      case 1:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ThirdPartyTransfers(),
         ));
         break;
       case 2:

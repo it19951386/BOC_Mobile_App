@@ -34,7 +34,7 @@ class _AddUtility03State extends State<AddUtility03> {
           backgroundColor: Colors.transparent,
           body: Container(
             child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+
               child: Column(
                 children: [
                   SizedBox(
@@ -97,7 +97,7 @@ class _AddUtility03State extends State<AddUtility03> {
                                 offset: Offset(0, 4))
                           ]),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 90),
+                        padding: const EdgeInsets.symmetric(horizontal: 72),
                         child: DropdownButton<String>(
                           value: value2,
                           items: items2.map((String buildMenuItem) {
@@ -141,7 +141,7 @@ class _AddUtility03State extends State<AddUtility03> {
                                 offset: Offset(0, 4))
                           ]),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 90),
+                        padding: const EdgeInsets.symmetric(horizontal: 60),
                         child: DropdownButton<String>(
                           value: value3,
                           items: items3.map((String buildMenuItem) {
@@ -171,13 +171,13 @@ class _AddUtility03State extends State<AddUtility03> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 80),
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         ClearButton(),
                         SizedBox(
-                          width: 100,
+                          width: 0,
                         ),
                         SaveButton(),
                       ],
@@ -204,7 +204,7 @@ class SaveButton extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: Colors.amber,
-              border: Border.all(width: 2.0, color: Colors.black12),
+              border: Border.all(width: 1.0, color: Colors.black12),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
@@ -219,7 +219,7 @@ class SaveButton extends StatelessWidget {
                     ));
               },
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
+                padding: const EdgeInsets.fromLTRB(10, 5, 5, 5),
                 child: Text(
                   'Submit',
                   style: TextStyle(
@@ -250,7 +250,7 @@ class ClearButton extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(width: 3.0, color: Colors.amberAccent),
+              border: Border.all(width: 1.0, color: Colors.amberAccent),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
@@ -265,7 +265,7 @@ class ClearButton extends StatelessWidget {
                     ));
               },
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(25, 5, 25, 5),
+                padding: const EdgeInsets.fromLTRB(1, 5, 5, 5),
                 child: Text(
                   'Previous',
                   style: TextStyle(
