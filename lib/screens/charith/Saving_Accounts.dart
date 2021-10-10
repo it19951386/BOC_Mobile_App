@@ -59,19 +59,6 @@ class SavingAccounts extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AddAccount()));
-        },
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 40,
-        ),
-        backgroundColor: Colors.amber,
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
