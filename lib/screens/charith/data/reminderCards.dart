@@ -38,6 +38,7 @@ class ReminderList extends StatelessWidget {
                               date,
                               textAlign: TextAlign.right,
                               style: ApptextStyle.CARD_DATE,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           SizedBox(height: 10),
@@ -49,6 +50,7 @@ class ReminderList extends StatelessWidget {
                           Text(
                             description,
                             style: ApptextStyle.CARD_SUB_TITLE,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),

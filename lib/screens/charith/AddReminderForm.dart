@@ -187,9 +187,27 @@ class _AddReminderFormState extends State<AddReminderForm> {
                       DateTime? pickedDate = await showDatePicker(
                           context: context,
                           initialDate: DateTime.now(),
-                          firstDate: DateTime(
-                              2000), //DateTime.now() - not to allow to choose before today.
-                          lastDate: DateTime(2101));
+                          firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
+                          lastDate: DateTime(2101)
+                            builder: (context, child) {
+                              return Theme(
+                                data: Theme.of(context).copyWith(
+                                  colorScheme: ColorScheme.light(
+                                    primary:
+                                        Colors.amber, // header background color
+                                    onPrimary: Colors.black, // header text color
+                                    onSurface: Colors.black, // body text color
+                                  ),
+                                  textButtonTheme: TextButtonThemeData(
+                                    style: TextButton.styleFrom(
+                                      primary: Colors.red, // button text color
+                                    ),
+                                  ),
+                                ),
+                                child: child!,
+                              );
+                            },                          
+                          );
 
                       if (pickedDate != null) {
                         print(
@@ -263,6 +281,24 @@ class _AddReminderFormState extends State<AddReminderForm> {
                         TimeOfDay? pickedTime = await showTimePicker(
                           initialTime: TimeOfDay.now(),
                           context: context,
+                          builder: (context, child) {
+                            return Theme(
+                              data: Theme.of(context).copyWith(
+                                colorScheme: ColorScheme.light(
+                                  primary:
+                                      Colors.amber, // header background color
+                                  onPrimary: Colors.black, // header text color
+                                  onSurface: Colors.black, // body text color
+                                ),
+                                textButtonTheme: TextButtonThemeData(
+                                  style: TextButton.styleFrom(
+                                    primary: Colors.red, // button text color
+                                  ),
+                                ),
+                              ),
+                              child: child!,
+                            );
+                          },                          
                         );
 
                         if (pickedTime != null) {
